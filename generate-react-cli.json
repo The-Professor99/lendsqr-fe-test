@@ -7,7 +7,7 @@
     "default": {
       "customTemplates": {
         "component": "templates/TemplateName.tsx",
-        "index": "templates/default/index.js",
+        "index": "templates/default/index.ts",
         "test": "templates/TemplateName.test.tsx"
       },
       "path": "src",
