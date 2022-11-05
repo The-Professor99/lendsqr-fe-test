@@ -11,7 +11,7 @@ function RequireAuth({ children }: RequireAuthProps): JSX.Element {
   const location = useLocation();
   const user = accountService.userValue;
 
-  if (!user.email) {
+  if (!user.verified) {
     // not logged in so redirect to login page with the return url
     return <Navigate to="/account/login" state={{ from: location }} />;
   }

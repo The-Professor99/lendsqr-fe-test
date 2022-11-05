@@ -6,15 +6,18 @@ import {
   Box,
   CircularProgress,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+
+import { accountService } from "_services";
 
 import "./Login.scss";
 
 function Login() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     document.title = "Lendsqr - Login Page";
@@ -44,13 +47,22 @@ function Login() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      // onsubmit action will go here
-      console.log(values);
-
-      // simulate login
-      setTimeout(() => {
-        navigate({ pathname: "/" });
-      }, 5000);
+      formik.setSubmitting(true);
+      accountService
+        .login(values)
+        .then(() => {
+          window.alert("Login Success!");
+          const { from } = location.state || {
+            from: { pathname: "/" },
+          };
+          navigate(from);
+        })
+        .catch((err) => {
+          window.alert(`An Error Occurred: ${err}`);
+        })
+        .finally(() => {
+          formik.setSubmitting(false);
+        });
     },
   });
 
