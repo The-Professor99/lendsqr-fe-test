@@ -6,6 +6,7 @@ import {
   Box,
   CircularProgress,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -13,6 +14,7 @@ import "./Login.scss";
 
 function Login() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Lendsqr - Login Page";
@@ -44,7 +46,11 @@ function Login() {
     onSubmit: (values) => {
       // onsubmit action will go here
       console.log(values);
-      formik.setSubmitting(false);
+
+      // simulate login
+      setTimeout(() => {
+        navigate({ pathname: "/" });
+      }, 5000);
     },
   });
 

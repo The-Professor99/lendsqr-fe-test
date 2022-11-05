@@ -1,7 +1,9 @@
 import React from "react";
 import "./TemplateName.scss";
 
-function TemplateName() {
+interface TemplateNameProps {}
+
+function TemplateName({}: TemplateNameProps): React.ReactNode {
   return (
     <div className="TemplateName" data-testid="TemplateName">
       TemplateName Component

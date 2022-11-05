@@ -11,6 +11,7 @@ import {
   UsersPage,
   NotFound,
 } from "pages";
+import { RequireAuth } from "_helpers";
 
 import "./index.scss";
 import App from "./App";
@@ -24,7 +25,13 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route element={<HomeLayout />}>
+          <Route
+            element={
+              <RequireAuth>
+                <HomeLayout />
+              </RequireAuth>
+            }
+          >
             <Route index element={<AdminDashboard />} />
             <Route path="users" element={<UsersPage />} />
             <Route path="user/:id" element={<UserDetails />} />
