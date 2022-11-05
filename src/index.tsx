@@ -11,11 +11,16 @@ import {
   UsersPage,
   NotFound,
 } from "pages";
-import { RequireAuth } from "_helpers";
+import { RequireAuth, configureFakeBackend } from "_helpers";
 
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+// setup fake backend. Only need to simulate login
+// comment out when the simulated fake login functionality
+// is no longer needed or when a real backend is built.
+configureFakeBackend();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
