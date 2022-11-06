@@ -11,6 +11,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import { accountService } from "_services";
+import appRoutes from "routes";
 
 import "./Login.scss";
 
@@ -53,7 +54,7 @@ function Login() {
         .then(() => {
           window.alert("Login Success!");
           const { from } = location.state || {
-            from: { pathname: "/" },
+            from: { pathname: appRoutes.Dashboard.path },
           };
           navigate(from);
         })

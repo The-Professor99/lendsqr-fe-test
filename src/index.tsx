@@ -15,6 +15,7 @@ import { RequireAuth, configureFakeBackend } from "_helpers";
 
 import "./index.scss";
 import App from "./App";
+import appRoutes from "./routes";
 import reportWebVitals from "./reportWebVitals";
 
 // setup fake backend. Only need to simulate login
@@ -29,7 +30,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}>
+        <Route path={appRoutes.Dashboard.path} element={<App />}>
           <Route
             element={
               <RequireAuth>
@@ -38,11 +39,14 @@ root.render(
             }
           >
             <Route index element={<AdminDashboard />} />
-            <Route path="users" element={<UsersPage />} />
-            <Route path="user/:id" element={<UserDetails />} />
+            <Route path={appRoutes.UsersPage.path} element={<UsersPage />} />
+            <Route
+              path={`${appRoutes.UserDetails.path}/:id`}
+              element={<UserDetails />}
+            />
           </Route>
           <Route element={<AccountsLayout />}>
-            <Route path="/account/login" element={<Login />} />
+            <Route path={appRoutes.Login.path} element={<Login />} />
           </Route>
         </Route>
         <Route path="*" element={<NotFound />} />
