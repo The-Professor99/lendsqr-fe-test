@@ -41,7 +41,7 @@ root.render(
             <Route index element={<AdminDashboard />} />
             <Route path={appRoutes.UsersPage.path} element={<UsersPage />} />
             <Route
-              path={`${appRoutes.UserDetails.path}/:id`}
+              path={`${appRoutes.UserDetails.path}/:userId`}
               element={<UserDetails />}
             />
           </Route>

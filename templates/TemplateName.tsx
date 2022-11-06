@@ -3,7 +3,7 @@ import "./TemplateName.scss";
 
 interface TemplateNameProps {}
 
-function TemplateName({}: TemplateNameProps): React.ReactNode {
+function TemplateName({}: TemplateNameProps): JSX.Element {
   return (
     <div className="TemplateName" data-testid="TemplateName">
       TemplateName Component

@@ -3,7 +3,10 @@ import React, { useState, useEffect } from "react";
 import { fetchWrapper } from "_helpers";
 import { UserProfile } from "_models";
 
-export const useRemoteService = (url: string, initial: UserProfile[]) => {
+export const useRemoteService = (
+  url: string,
+  initial: UserProfile[] | UserProfile
+) => {
   const [data, setData] = useState(initial);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -15,7 +18,6 @@ export const useRemoteService = (url: string, initial: UserProfile[]) => {
       fetchWrapper
         .get(url)
         .then((res) => {
-          console.log(res);
           setData(res);
         })
         .catch(() => {

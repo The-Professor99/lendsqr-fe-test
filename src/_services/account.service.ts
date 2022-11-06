@@ -5,6 +5,7 @@ import { fetchWrapper } from "_helpers";
 let initUser: Account;
 const userKey = "user-account-lendsqr-test";
 const baseUrl = process.env.REACT_APP_BASE_URL;
+const loginUrl = `${baseUrl}/accounts/login`;
 
 // Get user details from localStorage, else, initialize
 if (localStorage.getItem(userKey)) {
@@ -28,7 +29,7 @@ export const accountService = {
 };
 
 async function login(values: Account) {
-  const user = await fetchWrapper.post(`${baseUrl}/ccounts/login`, values);
+  const user = await fetchWrapper.post(loginUrl, values);
   // publish user to subscribers
   userSubject.next(user);
   localStorage.setItem(userKey, JSON.stringify(user) || "");

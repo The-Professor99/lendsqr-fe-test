@@ -7,7 +7,7 @@ import { UserProfile } from "_models";
 import "./AdminDashboard.scss";
 
 function AdminDashboard() {
-  const url =
+  const dataUrl =
     "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users";
   const statusArray = ["Inactive", "Pending", "Backlisted"];
 
@@ -15,7 +15,10 @@ function AdminDashboard() {
     document.title = "Lendsqr - Admin Dashboard";
   }, []);
 
-  const { data, loading, error } = useRemoteService(url, [] as UserProfile[]);
+  const { data, loading, error } = useRemoteService(
+    dataUrl,
+    [] as UserProfile[]
+  );
 
   const randomChoice = (arr: string[]) => {
     return arr[Math.floor(arr.length * Math.random())];
@@ -61,7 +64,7 @@ function AdminDashboard() {
       <DataTable
         title="User's List"
         columns={columns}
-        data={data}
+        data={Array.isArray(data) ? data : []}
         striped
         highlightOnHover
         noDataComponent={

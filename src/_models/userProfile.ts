@@ -1,4 +1,4 @@
-interface Profile {
+export interface Profile {
   firstName: string;
   lastName: string;
   phoneNumber: string;
@@ -9,7 +9,7 @@ interface Profile {
   currency: string;
 }
 
-interface Guarantor {
+export interface Guarantor {
   firstName: string;
   lastName: string;
   phoneNumber: string;
@@ -17,13 +17,13 @@ interface Guarantor {
   address: string;
 }
 
-interface Socials {
+export interface Socials {
   facebook: string;
   instagram: string;
   twitter: string;
 }
 
-interface Education {
+export interface Education {
   level: string;
   employmentStatus: string;
   sector: string;
