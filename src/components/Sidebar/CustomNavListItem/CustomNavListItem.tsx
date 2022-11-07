@@ -5,25 +5,25 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-import "./CustomListItem.scss";
+import "./CustomNavListItem.scss";
 
-interface CustomListItemProps {
+interface CustomNavListItemProps {
   children: JSX.Element;
   displayText: string;
   linkUrl?: string;
   clickAction?: () => void;
 }
 
-function CustomListItem({
+function CustomNavListItem({
   children,
   displayText,
   linkUrl = "#!",
   clickAction,
-}: CustomListItemProps): JSX.Element {
+}: CustomNavListItemProps): JSX.Element {
   return (
-    <div className="CustomListItem" data-testid="CustomListItem">
+    <div className="CustomNavListItem" data-testid="CustomNavListItem">
       {clickAction ? ( // if a clickAction is defined, it takes precedence over linkUrl
         <ListItem
           className="CustomNavListItem"
@@ -32,24 +32,24 @@ function CustomListItem({
         >
           <ListItemButton>
             <ListItemIcon>{children}</ListItemIcon>
-            <ListItemText primary={displayText} />
+            <ListItemText primary={displayText} className="desktop-only" />
           </ListItemButton>
         </ListItem>
       ) : (
-        <Link to={linkUrl}>
+        <NavLink to={linkUrl}>
           <ListItem
             className="CustomNavListItem"
             data-testid="CustomNavListItem"
           >
             <ListItemButton>
               <ListItemIcon>{children}</ListItemIcon>
-              <ListItemText primary={displayText} />
+              <ListItemText primary={displayText} className="desktop-only" />
             </ListItemButton>
           </ListItem>
-        </Link>
+        </NavLink>
       )}
     </div>
   );
 }
 
-export { CustomListItem };
+export { CustomNavListItem };

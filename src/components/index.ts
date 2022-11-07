@@ -4,4 +4,3 @@ export * from "./EducationInfo";
 export * from "./GuarantorInfo";
 export * from "./SocialsInfo";
 export * from "./Sidebar";
-export * from "./CustomListItem";

@@ -2,7 +2,7 @@ import React from "react";
 import List from "@mui/material/List";
 import { PersonAdd } from "@mui/icons-material";
 
-import { CustomListItem } from "components";
+import { CustomNavListItem } from "../CustomNavListItem";
 import "./BusinessNav.scss";
 
 interface BusinessNavProps {}
@@ -10,17 +10,35 @@ interface BusinessNavProps {}
 function BusinessNav({}: BusinessNavProps): JSX.Element {
   return (
     <div className="BusinessNav" data-testid="BusinessNav">
-      Businesses
+      <h3 className="section-title">Businesses</h3>
       <List>
-        <CustomListItem displayText={"Organization"} linkUrl={"#!"}>
+        <CustomNavListItem displayText={"Organization"} linkUrl={"#!"}>
           <PersonAdd />
-        </CustomListItem>
-        <CustomListItem displayText={"Loan Products"} linkUrl={"#!"}>
+        </CustomNavListItem>
+        <CustomNavListItem displayText={"Loan Products"} linkUrl={"#!"}>
           <PersonAdd />
-        </CustomListItem>
-        <CustomListItem displayText={"Savings Products"} linkUrl={"#!"}>
+        </CustomNavListItem>
+        <CustomNavListItem displayText={"Savings Products"} linkUrl={"#!"}>
           <PersonAdd />
-        </CustomListItem>
+        </CustomNavListItem>
+        <CustomNavListItem displayText={"Fees and Charges"} linkUrl={"#!"}>
+          <PersonAdd />
+        </CustomNavListItem>
+        <CustomNavListItem displayText={"Transactions"} linkUrl={"#!"}>
+          <PersonAdd />
+        </CustomNavListItem>
+        <CustomNavListItem displayText={"Services"} linkUrl={"#!"}>
+          <PersonAdd />
+        </CustomNavListItem>
+        <CustomNavListItem displayText={"Service Account"} linkUrl={"#!"}>
+          <PersonAdd />
+        </CustomNavListItem>
+        <CustomNavListItem displayText={"Settlements"} linkUrl={"#!"}>
+          <PersonAdd />
+        </CustomNavListItem>
+        <CustomNavListItem displayText={"Reports"} linkUrl={"#!"}>
+          <PersonAdd />
+        </CustomNavListItem>
       </List>
     </div>
   );

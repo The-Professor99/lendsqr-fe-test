@@ -7,7 +7,9 @@ import "./HomeLayout.scss";
 function HomeLayout() {
   return (
     <div className="HomeLayout" data-testid="HomeLayout">
-      <Sidebar />
+      <div className="sidebar-container">
+        <Sidebar />
+      </div>
       <div className="home-outlet-container">
         <Outlet />
       </div>

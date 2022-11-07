@@ -6,7 +6,7 @@ import Divider from "@mui/material/Divider";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 
-import { CustomListItem } from "components";
+import { CustomNavListItem } from "../CustomNavListItem";
 import { accountService } from "_services";
 import appRoutes from "routes";
 import "./SettingsNav.scss";
@@ -29,22 +29,25 @@ function SettingsNav({}: SettingsNavProps): JSX.Element {
   return (
     <>
       <div className="SettingsNav" data-testid="SettingsNav">
-        Settings
+        <h3 className="section-title">Settings</h3>
         <List>
-          <CustomListItem displayText={"Preferences"} linkUrl={"#!"}>
+          <CustomNavListItem displayText={"Preferences"} linkUrl={"#!"}>
             <PersonAdd />
-          </CustomListItem>
-          <CustomListItem displayText={"Fees and Pricing"} linkUrl={"#!"}>
+          </CustomNavListItem>
+          <CustomNavListItem displayText={"Fees and Pricing"} linkUrl={"#!"}>
             <PersonAdd />
-          </CustomListItem>
-          <CustomListItem displayText={"Audit Logs"} linkUrl={"#!"}>
+          </CustomNavListItem>
+          <CustomNavListItem displayText={"Audit Logs"} linkUrl={"#!"}>
             <PersonAdd />
-          </CustomListItem>
+          </CustomNavListItem>
+          <CustomNavListItem displayText={"Systems Messages"} linkUrl={"#!"}>
+            <PersonAdd />
+          </CustomNavListItem>
 
           <Divider />
-          <CustomListItem displayText={"Logout"} clickAction={handleLogout}>
+          <CustomNavListItem displayText={"Logout"} clickAction={handleLogout}>
             <PersonAdd />
-          </CustomListItem>
+          </CustomNavListItem>
         </List>
       </div>
 

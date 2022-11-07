@@ -1,1 +1,16 @@
-.Sidebar {}
+.Sidebar {
+  .MuiPaper-root {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    overflow-y: auto;
+    padding-left: 30px;
+    padding-top: 36px;
+  }
+  .MuiListItemButton-root,
+  .MuiListItem-root {
+    padding-left: 0;
+  }
+}
