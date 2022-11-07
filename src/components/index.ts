@@ -8,3 +8,5 @@ export * from "./TopBar";
 export * from "./SearchBar";
 export * from "./AccountMenu";
 export * from "./Notifications";
+export * from "./UsersCountTab";
+export * from "./UsersTable";

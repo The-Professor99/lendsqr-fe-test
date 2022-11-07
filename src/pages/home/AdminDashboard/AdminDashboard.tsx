@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 
-import { OptionsPopover } from "components";
+import { OptionsPopover, UsersCountTab } from "components";
 import { useRemoteService } from "_helpers";
 import { UserProfile } from "_models";
 import "./AdminDashboard.scss";
@@ -59,8 +59,9 @@ function AdminDashboard() {
   ];
 
   return (
-    <div className="AdminDashboard" data-testid="AdminDashboard">
-      AdminDashboard Component
+    <section className="AdminDashboard" data-testid="AdminDashboard">
+      <h2>Users</h2>
+      <UsersCountTab />
       <DataTable
         title="User's List"
         columns={columns}
@@ -71,8 +72,9 @@ function AdminDashboard() {
           <div style={{ marginBottom: "1rem" }}>No registered user</div>
         }
         progressPending={loading}
+        pagination
       />
-    </div>
+    </section>
   );
 }
 

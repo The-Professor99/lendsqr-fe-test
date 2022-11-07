@@ -17,7 +17,7 @@ function Sidebar({}: SidebarProps): JSX.Element {
   return (
     <aside className="Sidebar" data-testid="Sidebar">
       <Box>
-        <Paper elevation={12} sx={{ width: 283 }}>
+        <Paper sx={{ width: 283 }}>
           <OrganizationSwitch />
           <CustomNavListItem displayText={"Dashboard"} linkUrl={"/"}>
             <PersonAdd />
