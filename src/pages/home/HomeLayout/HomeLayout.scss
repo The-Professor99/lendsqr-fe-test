@@ -1,7 +1,9 @@
 .HomeLayout {
-  display: flex;
-  .home-outlet-container {
-    overflow: auto;
-    margin-left: 300px;
+  .home-layout-sub {
+    display: flex;
+    .home-outlet-container {
+      overflow: auto;
+      margin-left: 300px;
+    }
   }
 }

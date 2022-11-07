@@ -1,0 +1,12 @@
+.SearchBar {
+  form {
+    width: fit-content;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    .MuiIconButton-root {
+      background: cyan;
+      color: white;
+      border-radius: 0.4rem;
+    }
+  }
+}

@@ -18,9 +18,6 @@ function Sidebar({}: SidebarProps): JSX.Element {
     <aside className="Sidebar" data-testid="Sidebar">
       <Box>
         <Paper elevation={12} sx={{ width: 283 }}>
-          <header className="logo-container">
-            <img src={lendsqrLogo} alt="Lendsqr Logo" />
-          </header>
           <OrganizationSwitch />
           <CustomNavListItem displayText={"Dashboard"} linkUrl={"/"}>
             <PersonAdd />

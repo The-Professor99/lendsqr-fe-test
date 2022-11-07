@@ -4,3 +4,7 @@ export * from "./EducationInfo";
 export * from "./GuarantorInfo";
 export * from "./SocialsInfo";
 export * from "./Sidebar";
+export * from "./TopBar";
+export * from "./SearchBar";
+export * from "./AccountMenu";
+export * from "./Notifications";
