@@ -70,11 +70,8 @@ function Login() {
   return (
     <div className="Login" data-testid="Login">
       <div className="text-container">
-        <h2>
-          Welcome!
-          <br />
-          Enter details to login.
-        </h2>
+        <h2>Welcome!</h2>
+        <p>Enter details to login.</p>
       </div>
       <Box sx={{ display: "flex", flexWrap: "wrap" }}>
         <form onSubmit={formik.handleSubmit}>

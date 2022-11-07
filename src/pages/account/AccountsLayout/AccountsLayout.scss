@@ -1,1 +1,25 @@
-.AccountsLayout {}
+.AccountsLayout {
+  .logo-container {
+    margin-left: 30px;
+  }
+  .al-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  @media all and (min-width: 768px) {
+    height: 100vh;
+    margin-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .al-container {
+      flex-direction: row;
+      justify-content: space-between;
+      .accounts-outlet-container {
+        width: 50%;
+        max-width: 704px;
+      }
+    }
+  }
+}

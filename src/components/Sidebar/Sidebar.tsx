@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Divider } from "@mui/material";
+import { Box} from "@mui/material";
 
 import { CustomersNav } from "./CustomersNav";
 import { BusinessNav } from "./BusinessNav";

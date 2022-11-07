@@ -1,1 +1,25 @@
-.Login {}
+.Login {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  .text-container {
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0.625rem;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 3.75rem;
+    }
+  }
+  .MuiBox-root {
+    max-width: 447px;
+    .MuiFormControl-root {
+      margin-bottom: 1.5rem;
+    }
+  }
+  .forgot-password {
+    margin-bottom: 1.8rem;
+  }
+}
