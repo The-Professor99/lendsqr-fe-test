@@ -6,6 +6,7 @@ import { Button } from "@mui/material";
 import { UserDetailsOverview } from "components";
 import { useRemoteService } from "_helpers";
 import { UserProfile } from "_models";
+import { backIcon } from "assets";
 import "./UserDetails.scss";
 
 function UserDetails() {
@@ -23,14 +24,17 @@ function UserDetails() {
   console.log(data);
   return (
     <section className="UserDetails" data-testid="UserDetails">
-      <Button onClick={() => navigate({ pathname: "/" })}>
-        <PersonAdd /> Back to Users
+      <Button
+        onClick={() => navigate({ pathname: "/" })}
+        className="prevButton"
+      >
+        <img src={backIcon} alt="go back icon" /> <span>Back to Users</span>
       </Button>
-      <div>
+      <div className="action-buttons-container">
         <h2>User Details</h2>
         <div>
-          <Button>BLACKLIST USER</Button>
-          <Button>ACTIVATE USER</Button>
+          <Button variant="outlined">BLACKLIST USER</Button>
+          <Button variant="outlined">ACTIVATE USER</Button>
         </div>
       </div>
       <UserDetailsOverview

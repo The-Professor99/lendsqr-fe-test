@@ -17,21 +17,21 @@ function GuarantorInfo({ guarantorDetails }: GuarantorInfoProps): JSX.Element {
           <div key={value}>
             <div className="grid-container">
               <div>
-                <h2>FULL NAME</h2>
+                <b>FULL NAME</b>
                 <p>
                   {guarantorDetails.firstName + " " + guarantorDetails.lastName}
                 </p>
               </div>
               <div>
-                <h2>PHONE NUMBER</h2>
+                <b>PHONE NUMBER</b>
                 <p>{guarantorDetails.phoneNumber}</p>
               </div>
               <div>
-                <h2>EMAIL ADDRESS</h2>
+                <b>EMAIL ADDRESS</b>
                 <p>{`${guarantorDetails.firstName}@gmail.com`}</p>
               </div>
               <div>
-                <h2>RELATIONSHIP</h2>
+                <b>RELATIONSHIP</b>
                 <p>Sister</p>
               </div>
             </div>

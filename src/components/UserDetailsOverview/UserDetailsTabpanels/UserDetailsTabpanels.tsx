@@ -33,6 +33,7 @@ function UserDetailsTabpanels({
         hidden={value !== indexValue}
         id="tabpanel-user-details"
         aria-labelledby="tabpanel-user-details"
+        className="TabPanel"
         {...other}
       >
         {value === indexValue && <Box sx={{ p: 3 }}>{children}</Box>}

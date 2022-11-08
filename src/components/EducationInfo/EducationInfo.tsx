@@ -12,34 +12,34 @@ function EducationInfo({ educationDetails }: EducationInfoProps): JSX.Element {
       <h3>Education and Employment</h3>
       <div className="grid-container">
         <div>
-          <h2>LEVEL OF EDUCATION</h2>
+          <b>LEVEL OF EDUCATION</b>
           <p>{educationDetails.level}</p>
         </div>
         <div>
-          <h2>EMPLOYMENT STATUS</h2>
+          <b>EMPLOYMENT STATUS</b>
           <p>{educationDetails.employmentStatus}</p>
         </div>
         <div>
-          <h2>SECTOR OF EMPLOYMENT</h2>
+          <b>SECTOR OF EMPLOYMENT</b>
           <p>{educationDetails.sector}</p>
         </div>
         <div>
-          <h2>DURATION OF EMPLOYMENT</h2>
+          <b>DURATION OF EMPLOYMENT</b>
           <p>{educationDetails.duration}</p>
         </div>
         <div>
-          <h2>OFFICE EMAIL</h2>
+          <b>OFFICE EMAIL</b>
           <p>{educationDetails.officeEmail}</p>
         </div>
         <div>
-          <h2>MONTHLY INCOME</h2>
+          <b>MONTHLY INCOME</b>
           <p>
             ₦{educationDetails.monthlyIncome?.at(0)} - ₦
             {educationDetails.monthlyIncome?.at(1)}
           </p>
         </div>
         <div>
-          <h2>LOAN REPAYMENT</h2>
+          <b>LOAN REPAYMENT</b>
           <p>{educationDetails.loanRepayment}</p>
         </div>
       </div>

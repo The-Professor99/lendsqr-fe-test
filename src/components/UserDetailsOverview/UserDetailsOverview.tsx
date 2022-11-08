@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Paper, Avatar } from "@mui/material";
-import { PersonAdd } from "@mui/icons-material";
 
 import { UserDetailsTabs } from "./UserDetailsTabs";
 import { UserDetailsTabpanels } from "./UserDetailsTabpanels";
-import "./UserDetailsOverview.scss";
 import { UserProfile } from "_models";
+import { avatarIcon, starIconFilled, starIconOutlined } from "assets";
+import "./UserDetailsOverview.scss";
 
 interface UserDetailsOverviewProps {
   data: UserProfile;
@@ -31,13 +31,13 @@ function UserDetailsOverview({ data }: UserDetailsOverviewProps): JSX.Element {
     return (
       <div className="BriefOverview d-flex">
         <div className="avatar-container">
-          <Avatar sx={{ width: 32, height: 32 }}>
-            <PersonAdd className="dummyAvatar" />
+          <Avatar sx={{ width: 100, height: 100 }}>
+            <img src={avatarIcon} alt="avatar icon" />
             <div className="overlay">
               {data.profile?.avatar ? (
                 <img src={data.profile.avatar} alt="user avatar" />
               ) : (
-                <PersonAdd />
+                <img src={avatarIcon} alt="avatar icon" />
               )}
             </div>
           </Avatar>
@@ -52,12 +52,22 @@ function UserDetailsOverview({ data }: UserDetailsOverviewProps): JSX.Element {
             {Array(sampleTier)
               .fill("")
               .map((_, i) => (
-                <p key={i}>🌟</p>
+                <img
+                  src={starIconFilled}
+                  alt="filled star icon"
+                  className="svgIcon"
+                  key={i}
+                />
               ))}
             {Array(sampleTierTotal - sampleTier)
               .fill("")
               .map((_, i) => (
-                <p key={i}>$</p>
+                <img
+                  src={starIconOutlined}
+                  alt="star outline icon"
+                  className="svgIcon"
+                  key={i}
+                />
               ))}
           </div>
         </div>
@@ -71,12 +81,10 @@ function UserDetailsOverview({ data }: UserDetailsOverviewProps): JSX.Element {
 
   return (
     <div className="UserDetailsOverview" data-testid="UserDetailsOverview">
-      <div>
-        <Paper elevation={4}>
-          <BriefOverview />
-          <UserDetailsTabs tabValue={tabValue} handleChange={handleChange} />
-        </Paper>
-      </div>
+      <Paper elevation={4} className="brief-overview-container">
+        <BriefOverview />
+        <UserDetailsTabs tabValue={tabValue} handleChange={handleChange} />
+      </Paper>
       <div className="user-details-panels-container">
         <Paper elevation={4}>
           <UserDetailsTabpanels tabValue={tabValue} data={data} />

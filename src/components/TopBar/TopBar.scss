@@ -4,6 +4,7 @@
   .MuiPaper-root {
     height: $topbar-height;
     width: 100vw;
+    max-width: $body-max-width;
     position: fixed;
     top: 0;
     z-index: 3;

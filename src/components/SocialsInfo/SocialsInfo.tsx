@@ -12,15 +12,15 @@ function SocialsInfo({ socialsDetails }: SocialsInfoProps): JSX.Element {
       <h3>Socials</h3>
       <div className="grid-container">
         <div>
-          <h2>TWITTER</h2>
+          <b>TWITTER</b>
           <p>{socialsDetails.twitter}</p>
         </div>
         <div>
-          <h2>FACEBOOK</h2>
+          <b>FACEBOOK</b>
           <p>{socialsDetails.facebook}</p>
         </div>
         <div>
-          <h2>INSTAGRAM</h2>
+          <b>INSTAGRAM</b>
           <p>{socialsDetails.instagram}</p>
         </div>
       </div>

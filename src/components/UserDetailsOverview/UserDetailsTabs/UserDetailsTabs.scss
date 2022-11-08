@@ -1,1 +1,5 @@
-.UserDetailsTabs {}
+.UserDetailsTabs {
+  .MuiTabs-flexContainer {
+    justify-content: space-between;
+  }
+}

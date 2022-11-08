@@ -4,4 +4,7 @@
   .grid-container {
     @include grid-container;
   }
+  .MuiDivider-root {
+    margin-bottom: 1.5rem;
+  }
 }

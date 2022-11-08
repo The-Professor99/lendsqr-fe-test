@@ -1,1 +1,10 @@
-.UserDetailsTabpanels {}
+.UserDetailsTabpanels {
+}
+
+.TabPanel {
+  margin-bottom: 2rem;
+  .MuiBox-root {
+    padding-right: 5.6rem;
+    padding-left: 1.9rem;
+  }
+}

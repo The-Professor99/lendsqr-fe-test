@@ -1,7 +1,15 @@
 .UserDetailsOverview {
+  min-width: fit-content;
+  .MuiPaper-root.brief-overview-container {
+    margin: 2.9rem 0 1.9rem;
+    padding: 1.8rem 1.8rem 0;
+  }
+}
+
+.BriefOverview {
+  padding-bottom: 3.2rem;
   .avatar-container {
-    .dummyAvatar {
-    }
+    margin-right: 1.25rem;
     .overlay {
       position: absolute;
       top: 0;
@@ -13,13 +21,19 @@
       opacity: 0;
       transition: 0.3s ease;
       background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     &:hover .overlay {
       opacity: 1;
     }
   }
-}
-
-.BriefOverview {
-  display: flex;
+  .tier-container {
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    padding: 0 2rem;
+    border-top: 0;
+    border-bottom: 0;
+    margin: 0 2rem;
+  }
 }

@@ -1,1 +1,17 @@
-.UserDetails {}
+.UserDetails {
+  .prevButton {
+    align-items: center;
+    line-height: 0;
+    img {
+      margin-right: 0.8rem;
+    }
+  }
+  .action-buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button:first-child {
+      margin-right: 0.8rem;
+    }
+  }
+}
