@@ -8,7 +8,7 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 import { defaultUserAvatar } from "assets";
 import "./AccountMenu.scss";
@@ -28,20 +28,21 @@ function AccountMenu({}: AccountMenuProps): JSX.Element {
   return (
     <div className="AccountMenu" data-testid="AccountMenu">
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-        <Tooltip title="Account settings">
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? "account-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-          >
-            <Avatar sx={{ width: 32, height: 32 }}>
-              <img src={defaultUserAvatar} alt="user avatar" />
-            </Avatar>
-            Abayomi <ArrowDropDownIcon />
-          </IconButton>
+        <Tooltip title="account-menu">
+          <div onClick={handleClick} className="account-menu-container">
+            <IconButton
+              size="small"
+              sx={{ ml: 2 }}
+              aria-controls={open ? "account-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+            >
+              <Avatar sx={{ width: 32, height: 32 }}>
+                <img src={defaultUserAvatar} alt="user avatar" />
+              </Avatar>
+            </IconButton>
+            Adedeji <ArrowDropDownIcon />
+          </div>
         </Tooltip>
       </Box>
       <Menu

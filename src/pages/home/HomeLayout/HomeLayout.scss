@@ -1,10 +1,12 @@
+@import "styles/styles";
+
 .HomeLayout {
   .home-layout-sub {
     display: flex;
     .home-outlet-container {
       overflow: auto;
-      margin-left: 300px;
-      margin-top: 5rem;
+      margin-left: $home-layout-sidebar-offset;
+      margin-top: $home-layout-topbar-offset;
     }
   }
 }

@@ -16,10 +16,14 @@ function TopBar({}: TopBarProps): JSX.Element {
           <header className="logo-container">
             <img src={lendsqrLogo} alt="Lendsqr Logo" />
           </header>
-          <SearchBar />
-          <Link to="#!">Docs</Link>
-          <Notifications />
-          <AccountMenu />
+          <div className="searchbar-container">
+            <SearchBar />
+          </div>
+          <div className="topbar-right-container">
+            <Link to="#!">Docs</Link>
+            <Notifications />
+            <AccountMenu />
+          </div>
         </Paper>
       </Box>
     </div>

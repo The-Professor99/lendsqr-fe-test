@@ -11,3 +11,4 @@ export * from "./Notifications";
 export * from "./UsersCountTab";
 export * from "./UsersTable";
 export * from "./UserDetailsOverview";
+export * from "./IconComponent";

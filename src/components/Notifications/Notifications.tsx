@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Box, Menu, MenuItem, IconButton, Tooltip } from "@mui/material";
-import PersonAdd from "@mui/icons-material/PersonAdd";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
+import { notificationsIcon } from "assets";
 import "./Notifications.scss";
 
 interface NotificationsProps {}
@@ -21,7 +21,7 @@ function Notifications({}: NotificationsProps): JSX.Element {
   return (
     <div className="Notifications" data-testid="Notifications">
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-        <Tooltip title="Account settings">
+        <Tooltip title="notifications">
           <IconButton
             onClick={handleClick}
             size="small"
@@ -30,13 +30,17 @@ function Notifications({}: NotificationsProps): JSX.Element {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <PersonAdd />
+            <img
+              src={notificationsIcon}
+              alt="notifications Icon"
+              className="svgIcon"
+            />
           </IconButton>
         </Tooltip>
       </Box>
       <Menu
         anchorEl={anchorEl}
-        id="account-menu"
+        id="notifications"
         open={open}
         onClose={handleClose}
         onClick={handleClose}

@@ -15,7 +15,9 @@ function HomeLayout() {
           <Sidebar />
         </div>
         <div className="home-outlet-container">
-          <Outlet />
+          <div className="home-outlet-container-sub">
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
+@import "styles/styles";
+
 .TopBar {
   .MuiPaper-root {
-    height: 10vh;
+    height: $topbar-height;
     width: 100vw;
     position: fixed;
     top: 0;
@@ -9,5 +11,24 @@
     padding-left: 30px;
     display: flex;
     justify-content: space-between;
+    border-radius: 0;
+    align-items: center;
+  }
+  .logo-container {
+    width: 20%;
+  }
+  .searchbar-container {
+    width: 40%;
+  }
+  .topbar-right-container {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 300px;
+    margin-left: auto;
+    a {
+      text-decoration: underline;
+    }
   }
 }
