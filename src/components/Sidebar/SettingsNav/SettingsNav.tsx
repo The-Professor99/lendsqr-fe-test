@@ -9,6 +9,13 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { CustomNavListItem } from "../CustomNavListItem";
 import { accountService } from "_services";
 import appRoutes from "routes";
+import {
+  slidersIcon,
+  badgePercent,
+  clipboardIcon,
+  tireIcon,
+  logoutIcon,
+} from "assets";
 import "./SettingsNav.scss";
 
 interface SettingsNavProps {}
@@ -32,21 +39,25 @@ function SettingsNav({}: SettingsNavProps): JSX.Element {
         <h3 className="section-title">Settings</h3>
         <List>
           <CustomNavListItem displayText={"Preferences"} linkUrl={"#!"}>
-            <PersonAdd />
+            <img src={slidersIcon} alt="slider Icon" className="svgIcon" />
           </CustomNavListItem>
           <CustomNavListItem displayText={"Fees and Pricing"} linkUrl={"#!"}>
-            <PersonAdd />
+            <img
+              src={badgePercent}
+              alt="badge percent Icon"
+              className="svgIcon"
+            />
           </CustomNavListItem>
           <CustomNavListItem displayText={"Audit Logs"} linkUrl={"#!"}>
-            <PersonAdd />
+            <img src={clipboardIcon} alt="clipboard Icon" className="svgIcon" />
           </CustomNavListItem>
           <CustomNavListItem displayText={"Systems Messages"} linkUrl={"#!"}>
-            <PersonAdd />
+            <img src={tireIcon} alt="settings Icon" className="svgIcon" />
           </CustomNavListItem>
 
           <Divider />
           <CustomNavListItem displayText={"Logout"} clickAction={handleLogout}>
-            <PersonAdd />
+            <img src={logoutIcon} alt="logout Icon" className="svgIcon" />
           </CustomNavListItem>
         </List>
       </div>

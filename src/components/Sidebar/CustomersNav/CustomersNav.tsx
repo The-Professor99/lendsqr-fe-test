@@ -1,7 +1,16 @@
 import React from "react";
 import List from "@mui/material/List";
-import { PersonAdd } from "@mui/icons-material";
 
+import {
+  twoUsersIcon,
+  groupIcon,
+  moneyBagIcon,
+  handshakeIcon,
+  piggyBankIcon,
+  giveCashIcon,
+  userConfirmIconFilled,
+  userDeleteIconFilled,
+} from "assets";
 import { CustomNavListItem } from "../CustomNavListItem";
 import "./CustomersNav.scss";
 
@@ -13,28 +22,36 @@ function CustomersNav({}: CustomersNavProps): JSX.Element {
       <h3 className="section-title">Customers</h3>
       <List>
         <CustomNavListItem displayText={"Users"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={twoUsersIcon} alt="users Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Guarantors"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={groupIcon} alt="group Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Loans"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={moneyBagIcon} alt="money bag Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Decision Models"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={handshakeIcon} alt="handshake Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Savings"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={piggyBankIcon} alt="piggybank Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Loan Requests"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={giveCashIcon} alt="give cash Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Whitelist"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img
+            src={userConfirmIconFilled}
+            alt="user confirmed Icon"
+            className="svgIcon"
+          />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Karma"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img
+            src={userDeleteIconFilled}
+            alt="user delete Icon"
+            className="svgIcon"
+          />
         </CustomNavListItem>
       </List>
     </div>

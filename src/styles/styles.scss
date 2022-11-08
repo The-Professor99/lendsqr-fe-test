@@ -1,0 +1,5 @@
+$topbar-height: 12vh;
+$sidebar-height: calc(100vh - $topbar-height);
+$sidebar-width: 283px;
+$home-layout-sidebar-offset: calc($sidebar-width + 20px);
+$home-layout-topbar-offset: calc($topbar-height + 3vh);

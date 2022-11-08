@@ -1,8 +1,18 @@
 import React from "react";
 import List from "@mui/material/List";
-import { PersonAdd } from "@mui/icons-material";
 
 import { CustomNavListItem } from "../CustomNavListItem";
+import {
+  briefCaseIcon,
+  giveCashIcon,
+  bankIcon,
+  coinsSolid,
+  transactionsIcon,
+  servicesIcon,
+  userCog,
+  scrollIcon,
+  chartIcon,
+} from "assets";
 import "./BusinessNav.scss";
 
 interface BusinessNavProps {}
@@ -13,31 +23,35 @@ function BusinessNav({}: BusinessNavProps): JSX.Element {
       <h3 className="section-title">Businesses</h3>
       <List>
         <CustomNavListItem displayText={"Organization"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={briefCaseIcon} alt="briefcase Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Loan Products"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={giveCashIcon} alt="give cash Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Savings Products"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={bankIcon} alt="bank Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Fees and Charges"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={coinsSolid} alt="coins Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Transactions"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img
+            src={transactionsIcon}
+            alt="transactions Icon"
+            className="svgIcon"
+          />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Services"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={servicesIcon} alt="services Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Service Account"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={userCog} alt="user settings Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Settlements"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={scrollIcon} alt="scroll Icon" className="svgIcon" />
         </CustomNavListItem>
         <CustomNavListItem displayText={"Reports"} linkUrl={"#!"}>
-          <PersonAdd />
+          <img src={chartIcon} alt="chart Icon" className="svgIcon" />
         </CustomNavListItem>
       </List>
     </div>

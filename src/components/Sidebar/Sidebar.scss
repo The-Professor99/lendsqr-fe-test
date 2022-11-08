@@ -1,11 +1,15 @@
+@import "styles/styles";
 .Sidebar {
   .MuiPaper-root {
-    height: 90vh;
+    height: $sidebar-height;
+    width: $sidebar-width;
     position: fixed;
     bottom: 0;
     z-index: 3;
     overflow-y: auto;
     padding-left: 30px;
+    box-shadow: 13px 2px 5px -3px rgb(0 0 0 / 12%);
+    border-radius: 0;
   }
   .MuiListItemButton-root,
   .MuiListItem-root {

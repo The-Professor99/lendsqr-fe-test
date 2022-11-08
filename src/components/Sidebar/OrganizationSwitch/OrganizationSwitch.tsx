@@ -13,6 +13,7 @@ import {
   PersonAdd,
 } from "@mui/icons-material";
 
+import { briefCaseIcon } from "assets";
 import "./OrganizationSwitch.scss";
 
 interface OrganizationSwitchProps {}
@@ -26,7 +27,7 @@ function OrganizationSwitch({}: OrganizationSwitchProps): JSX.Element {
     <>
       <ListItemButton onClick={handleClick} sx={{ pl: 4 }}>
         <ListItemIcon>
-          <PersonAdd />
+          <img src={briefCaseIcon} alt="briefcase Icon" className="svgIcon" />
         </ListItemIcon>
         <ListItemText primary="Switch Organization" />
         {open ? <ExpandLess /> : <ExpandMore />}
