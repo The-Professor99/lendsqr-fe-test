@@ -5,11 +5,11 @@ import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <div className="app-outlet-container">
         <Outlet />
       </div>
-    </div>
+    </main>
   );
 }
 

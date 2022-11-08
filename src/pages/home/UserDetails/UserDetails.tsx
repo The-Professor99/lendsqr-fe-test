@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { PersonAdd } from "@mui/icons-material";
+import { Button, Box } from "@mui/material";
 
-import {
-  PersonalInfo,
-  SocialsInfo,
-  EducationInfo,
-  GuarantorInfo,
-} from "components";
+import { UserDetailsOverview } from "components";
 import { useRemoteService } from "_helpers";
-import { Education, Guarantor, Profile, Socials, UserProfile } from "_models";
+import { UserProfile } from "_models";
 import "./UserDetails.scss";
 
 function UserDetails() {
@@ -23,51 +20,28 @@ function UserDetails() {
   const { data, loading, error } = useRemoteService(dataUrl, {} as UserProfile);
 
   console.log(data);
-
   return (
-    <div className="UserDetails" data-testid="UserDetails">
-      UserDetails Component
-      <PersonalInfo
-        profileDetails={
+    <section className="UserDetails" data-testid="UserDetails">
+      <Button>
+        <PersonAdd /> Back to Users
+      </Button>
+      <div>
+        <h2>User Details</h2>
+        <div>
+          <Button>BLACKLIST USER</Button>
+          <Button>ACTIVATE USER</Button>
+        </div>
+      </div>
+      <UserDetailsOverview
+        data={
           !Array.isArray(data) &&
           data instanceof Object &&
-          data.constructor === Object &&
-          data.profile
-            ? data.profile
-            : ({} as Profile)
+          data.constructor === Object
+            ? data
+            : ({} as UserProfile)
         }
       />
-      <EducationInfo
-        educationDetails={
-          !Array.isArray(data) &&
-          data instanceof Object &&
-          data.constructor === Object &&
-          data.education
-            ? data.education
-            : ({} as Education)
-        }
-      />
-      <SocialsInfo
-        socialsDetails={
-          !Array.isArray(data) &&
-          data instanceof Object &&
-          data.constructor === Object &&
-          data.socials
-            ? data.socials
-            : ({} as Socials)
-        }
-      />
-      <GuarantorInfo
-        guarantorDetails={
-          !Array.isArray(data) &&
-          data instanceof Object &&
-          data.constructor === Object &&
-          data.guarantor
-            ? data.guarantor
-            : ({} as Guarantor)
-        }
-      />
-    </div>
+    </section>
   );
 }
 
