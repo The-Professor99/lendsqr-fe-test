@@ -6,7 +6,7 @@ import { Profile } from "_models";
 
 describe("<PersonalInfo />", () => {
   test("it should mount", () => {
-    render(<PersonalInfo profileDetails={{} as Profile} />);
+    render(<PersonalInfo profileDetails={{} as Profile} email={""} />);
 
     const personalInfo = screen.getByTestId("PersonalInfo");
 

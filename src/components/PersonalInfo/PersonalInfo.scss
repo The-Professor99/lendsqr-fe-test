@@ -1,1 +1,7 @@
-.PersonalInfo {}
+@import "styles/_mixins";
+
+.PersonalInfo {
+  .grid-container {
+    @include grid-container;
+  }
+}

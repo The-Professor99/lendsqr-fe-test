@@ -1,1 +1,7 @@
-.EducationInfo {}
+@import "styles/_mixins";
+
+.EducationInfo {
+  .grid-container {
+    @include grid-container;
+  }
+}

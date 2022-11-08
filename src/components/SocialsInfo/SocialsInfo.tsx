@@ -8,13 +8,23 @@ interface SocialsInfoProps {
 
 function SocialsInfo({ socialsDetails }: SocialsInfoProps): JSX.Element {
   return (
-    <div className="SocialsInfo" data-testid="SocialsInfo">
-      Socials
-      <div>
-        <h2>Twitter</h2>
-        <p>{socialsDetails.twitter}</p>
+    <section className="SocialsInfo" data-testid="SocialsInfo">
+      <h3>Socials</h3>
+      <div className="grid-container">
+        <div>
+          <h2>TWITTER</h2>
+          <p>{socialsDetails.twitter}</p>
+        </div>
+        <div>
+          <h2>FACEBOOK</h2>
+          <p>{socialsDetails.facebook}</p>
+        </div>
+        <div>
+          <h2>INSTAGRAM</h2>
+          <p>{socialsDetails.instagram}</p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

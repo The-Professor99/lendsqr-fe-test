@@ -1,0 +1,12 @@
+@mixin grid-container(
+  $temp-col1: auto,
+  $temp-col2: auto,
+  $temp-col3: auto,
+  $temp-col4: auto
+) {
+  display: grid;
+  grid-template-columns: $temp-col1 $temp-col2 $temp-col3 $temp-col4;
+  column-gap: 100px;
+  row-gap: 10px;
+  justify-content: space-between;
+}

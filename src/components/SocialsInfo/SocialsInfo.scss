@@ -1,1 +1,7 @@
-.SocialsInfo {}
+@import "styles/_mixins";
+
+.SocialsInfo {
+  .grid-container {
+    @include grid-container;
+  }
+}

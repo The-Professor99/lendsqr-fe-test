@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { PersonAdd } from "@mui/icons-material";
-import { Button, Box } from "@mui/material";
+import { Button } from "@mui/material";
 
 import { UserDetailsOverview } from "components";
 import { useRemoteService } from "_helpers";
@@ -10,6 +10,7 @@ import "./UserDetails.scss";
 
 function UserDetails() {
   const params = useParams();
+  const navigate = useNavigate();
   const userId = params.userId;
   const dataUrl = `https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${userId}`;
 
@@ -22,7 +23,7 @@ function UserDetails() {
   console.log(data);
   return (
     <section className="UserDetails" data-testid="UserDetails">
-      <Button>
+      <Button onClick={() => navigate({ pathname: "/" })}>
         <PersonAdd /> Back to Users
       </Button>
       <div>

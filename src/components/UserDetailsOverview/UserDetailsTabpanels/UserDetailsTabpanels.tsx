@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 
 import {
   PersonalInfo,
@@ -45,13 +45,17 @@ function UserDetailsTabpanels({
       <TabPanel value={tabValue} indexValue="generalDetails">
         <PersonalInfo
           profileDetails={data.profile ? data.profile : ({} as Profile)}
+          email={data.email}
         />
+        <Divider />
         <EducationInfo
           educationDetails={data.education ? data.education : ({} as Education)}
         />
+        <Divider />
         <SocialsInfo
           socialsDetails={data.socials ? data.socials : ({} as Socials)}
         />
+        <Divider />
         <GuarantorInfo
           guarantorDetails={data.guarantor ? data.guarantor : ({} as Guarantor)}
         />

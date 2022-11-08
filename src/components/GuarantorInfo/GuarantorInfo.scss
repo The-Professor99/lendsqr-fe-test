@@ -1,1 +1,7 @@
-.GuarantorInfo {}
+@import "styles/_mixins";
+
+.GuarantorInfo {
+  .grid-container {
+    @include grid-container;
+  }
+}
