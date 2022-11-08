@@ -5,7 +5,7 @@ import { UsersCountCards } from "./UsersCountCards";
 
 describe("<UsersCountCards />", () => {
   test("it should mount", () => {
-    render(<UsersCountCards children={<div></div>} title={""} count={""} />);
+    render(<UsersCountCards children={<div></div>} title={""} count={""} avatarBG={""} />);
 
     const usersCountCards = screen.getByTestId("UsersCountCards");
 

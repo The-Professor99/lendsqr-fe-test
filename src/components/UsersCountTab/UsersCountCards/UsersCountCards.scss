@@ -1,4 +1,9 @@
 .UsersCountCards {
   padding: 1rem 0.8rem;
-  margin-right: 1rem;
+  margin-right: 0.8rem;
+
+  .MuiPaper {
+    max-height: 160px;
+    max-width: 240px;
+  }
 }
