@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper } from "@mui/material";
+import { Paper, IconButton } from "@mui/material";
 
 import { filterIcon } from "assets";
 import "./DatatableHeader.scss";
@@ -21,7 +21,9 @@ function DatatableHeader({ headerTitles }: DatatableHeaderProps): JSX.Element {
         <span>{headerTitle}</span>
         {headerTitle && (
           <div className="filter-icon-container" onClick={handleClick}>
-            <img src={filterIcon} alt="filter icon" className="svgIcon" />
+            <IconButton>
+              <img src={filterIcon} alt="filter icon" className="svgIcon" />
+            </IconButton>
           </div>
         )}
       </>

@@ -13,8 +13,10 @@ function AdminDashboard() {
     document.title = "Lendsqr - Admin Dashboard";
   }, []);
 
-  let { data, loading, error } = useRemoteService(dataUrl, [] as UserProfile[]);
-  error = true;
+  const { data, loading, error } = useRemoteService(
+    dataUrl,
+    [] as UserProfile[]
+  );
 
   return (
     <section className="AdminDashboard" data-testid="AdminDashboard">

@@ -37,19 +37,19 @@ function DatatableRows({ data }: DatatableRowsProps): JSX.Element {
               role="row"
             >
               <DatatableRow>
-                <span>{user.orgName}</span>
+                <span title={user.orgName}>{user.orgName}</span>
               </DatatableRow>
               <DatatableRow>
-                <span>{user.userName}</span>
+                <span title={user.userName}>{user.userName}</span>
               </DatatableRow>
               <DatatableRow>
-                <span>{user.email}</span>
+                <span title={user.email}>{user.email}</span>
               </DatatableRow>
               <DatatableRow>
-                <span>{user.phoneNumber}</span>
+                <span title={user.phoneNumber}>{user.phoneNumber}</span>
               </DatatableRow>
               <DatatableRow>
-                <span>{user.createdAt}</span>
+                <span title={user.createdAt}>{user.createdAt}</span>
               </DatatableRow>
               <DatatableRow>
                 <span>{randomChoice(statusArray)}</span>

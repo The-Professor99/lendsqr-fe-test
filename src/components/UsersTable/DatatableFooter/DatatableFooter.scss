@@ -1,0 +1,20 @@
+.DatatableFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .select-box-container {
+    .MuiOutlinedInput-root {
+      margin: 0 0.5rem;
+      background: rgba(0, 0, 255, 0.3);
+      .MuiSelect-select {
+        padding: 0.5rem;
+        width: 4rem;
+      }
+    }
+  }
+  // .MuiPaginationItem-root.Mui-selected {
+  //   background-color: rgba(0, 0, 0, 0);
+  //   color: rgba(0, 0, 255, 0.3);
+  //   font-weight: bold;
+  // }
+}

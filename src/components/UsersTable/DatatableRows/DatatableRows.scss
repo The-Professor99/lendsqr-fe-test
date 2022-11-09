@@ -2,6 +2,11 @@
 
 .DatatableRow {
   @include table-data;
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 .DatatableRows {
