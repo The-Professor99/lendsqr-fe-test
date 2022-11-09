@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Divider } from "@mui/material";
+import { Box, Divider, CircularProgress } from "@mui/material";
 
 import {
   PersonalInfo,
@@ -13,6 +13,8 @@ import "./UserDetailsTabpanels.scss";
 interface UserDetailsTabpanelsProps {
   tabValue: string;
   data: UserProfile;
+  loading?: boolean;
+  error?: boolean;
 }
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -23,6 +25,8 @@ interface TabPanelProps {
 function UserDetailsTabpanels({
   tabValue,
   data,
+  loading,
+  error,
 }: UserDetailsTabpanelsProps): JSX.Element {
   const TabPanel = (props: TabPanelProps) => {
     const { children, value, indexValue, ...other } = props;
@@ -36,7 +40,21 @@ function UserDetailsTabpanels({
         className="TabPanel"
         {...other}
       >
-        {value === indexValue && <Box sx={{ p: 3 }}>{children}</Box>}
+        {loading ? (
+          <div className="loading-spinner-container">
+            <CircularProgress />{" "}
+          </div>
+        ) : (
+          <>
+            {Object.keys(data).length ? (
+              <>{value === indexValue && <Box sx={{ p: 3 }}>{children}</Box>}</>
+            ) : (
+              <strong className="errorMessage">
+                Failed to fetch data. Please Refresh the page
+              </strong>
+            )}
+          </>
+        )}
       </div>
     );
   };

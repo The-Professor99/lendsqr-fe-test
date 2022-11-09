@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { PersonAdd } from "@mui/icons-material";
 import { Button } from "@mui/material";
 
 import { UserDetailsOverview } from "components";
@@ -45,6 +44,8 @@ function UserDetails() {
             ? data
             : ({} as UserProfile)
         }
+        loading={loading}
+        error={error}
       />
     </section>
   );

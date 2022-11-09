@@ -6,7 +6,14 @@ import { UserProfile } from "_models";
 
 describe("<UserDetailsTabpanels />", () => {
   test("it should mount", () => {
-    render(<UserDetailsTabpanels tabValue={""} data={{} as UserProfile} />);
+    render(
+      <UserDetailsTabpanels
+        tabValue={""}
+        data={{} as UserProfile}
+        loading={false}
+        error={false}
+      />
+    );
 
     const userDetailsTabpanels = screen.getByTestId("UserDetailsTabpanels");
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Paper, Avatar } from "@mui/material";
+import { Paper, Avatar, CircularProgress } from "@mui/material";
 
 import { UserDetailsTabs } from "./UserDetailsTabs";
 import { UserDetailsTabpanels } from "./UserDetailsTabpanels";
@@ -9,9 +9,15 @@ import "./UserDetailsOverview.scss";
 
 interface UserDetailsOverviewProps {
   data: UserProfile;
+  loading?: boolean;
+  error?: boolean;
 }
 
-function UserDetailsOverview({ data }: UserDetailsOverviewProps): JSX.Element {
+function UserDetailsOverview({
+  data,
+  loading,
+  error,
+}: UserDetailsOverviewProps): JSX.Element {
   const [tabValue, setTabValue] = useState("generalDetails");
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -30,51 +36,69 @@ function UserDetailsOverview({ data }: UserDetailsOverviewProps): JSX.Element {
   const BriefOverview = () => {
     return (
       <div className="BriefOverview d-flex">
-        <div className="avatar-container">
-          <Avatar sx={{ width: 100, height: 100 }}>
-            <img src={avatarIcon} alt="avatar icon" />
-            <div className="overlay">
-              {data.profile?.avatar ? (
-                <img src={data.profile.avatar} alt="user avatar" />
-              ) : (
-                <img src={avatarIcon} alt="avatar icon" />
-              )}
-            </div>
-          </Avatar>
-        </div>
-        <div className="name-container">
-          <p>{data.profile?.firstName + " " + data.profile?.lastName}</p>
-          <p>{data.accountNumber} </p>
-        </div>
-        <div className="tier-container">
-          <p>User's Tier</p>
-          <div className="d-flex">
-            {Array(sampleTier)
-              .fill("")
-              .map((_, i) => (
-                <img
-                  src={starIconFilled}
-                  alt="filled star icon"
-                  className="svgIcon"
-                  key={i}
-                />
-              ))}
-            {Array(sampleTierTotal - sampleTier)
-              .fill("")
-              .map((_, i) => (
-                <img
-                  src={starIconOutlined}
-                  alt="star outline icon"
-                  className="svgIcon"
-                  key={i}
-                />
-              ))}
+        {loading ? (
+          <div className="loading-spinner-container">
+            <CircularProgress />{" "}
           </div>
-        </div>
-        <div className="balance-container">
-          <p>₦{data.accountBalance}</p>
-          <p>{data.accountNumber}/Providus Bank</p>
-        </div>
+        ) : (
+          <>
+            {Object.keys(data).length ? (
+              <>
+                <div className="avatar-container">
+                  <Avatar sx={{ width: 100, height: 100 }}>
+                    <img src={avatarIcon} alt="avatar icon" />
+                    <div className="overlay">
+                      {data.profile?.avatar ? (
+                        <img src={data.profile.avatar} alt="user avatar" />
+                      ) : (
+                        <img src={avatarIcon} alt="avatar icon" />
+                      )}
+                    </div>
+                  </Avatar>
+                </div>
+                <div className="name-container">
+                  <p>
+                    {data.profile?.firstName + " " + data.profile?.lastName}
+                  </p>
+                  <p>{data.accountNumber} </p>
+                </div>
+                <div className="tier-container">
+                  <p>User's Tier</p>
+                  <div className="d-flex">
+                    {Array(sampleTier)
+                      .fill("")
+                      .map((_, i) => (
+                        <img
+                          src={starIconFilled}
+                          alt="filled star icon"
+                          className="svgIcon"
+                          key={i}
+                        />
+                      ))}
+                    {Array(sampleTierTotal - sampleTier)
+                      .fill("")
+                      .map((_, i) => (
+                        <img
+                          src={starIconOutlined}
+                          alt="star outline icon"
+                          className="svgIcon"
+                          key={i}
+                        />
+                      ))}
+                  </div>
+                </div>
+                <div className="balance-container">
+                  <p>₦{data.accountBalance}</p>
+                  <p>{data.accountNumber}/Providus Bank</p>
+                </div>{" "}
+              </>
+            ) : (
+              <strong className="errorMessage">
+                Failed to fetch data. Please Refresh the page
+              </strong>
+            )}
+          </>
+        )}
       </div>
     );
   };
@@ -87,7 +111,12 @@ function UserDetailsOverview({ data }: UserDetailsOverviewProps): JSX.Element {
       </Paper>
       <div className="user-details-panels-container">
         <Paper elevation={4}>
-          <UserDetailsTabpanels tabValue={tabValue} data={data} />
+          <UserDetailsTabpanels
+            tabValue={tabValue}
+            data={data}
+            loading={loading}
+            error={error}
+          />
         </Paper>
       </div>
     </div>

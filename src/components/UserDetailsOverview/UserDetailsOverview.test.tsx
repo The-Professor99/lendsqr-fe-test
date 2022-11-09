@@ -6,7 +6,13 @@ import { UserProfile } from "_models";
 
 describe("<UserDetailsOverview />", () => {
   test("it should mount", () => {
-    render(<UserDetailsOverview data={{} as UserProfile} />);
+    render(
+      <UserDetailsOverview
+        data={{} as UserProfile}
+        loading={false}
+        error={false}
+      />
+    );
 
     const userDetailsOverview = screen.getByTestId("UserDetailsOverview");
 
