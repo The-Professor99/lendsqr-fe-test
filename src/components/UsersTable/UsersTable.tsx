@@ -5,6 +5,7 @@ import { UserProfile } from "_models";
 import { DatatableHeader } from "./DatatableHeader";
 import { DatatableRows } from "./DatatableRows";
 import { DatatableFooter } from "./DatatableFooter";
+import { DatatableFilterComponent } from "./DatatableFilterComponent";
 import "./UsersTable.scss";
 
 interface UsersTableProps {
@@ -29,8 +30,9 @@ function UsersTable({ data, loading, error }: UsersTableProps): JSX.Element {
   ];
 
   const CustomDataTable = ({ data, loading }: CustomDataTableProps) => {
-    const [page, setPage] = useState(0);
+    const [page, setPage] = useState(1);
     const [rowsPerPage, setRowsPerPage] = useState(10);
+    const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
 
     const handleChangePage = (event: unknown, newPage: number) => {
       setPage(newPage);
@@ -38,7 +40,15 @@ function UsersTable({ data, loading, error }: UsersTableProps): JSX.Element {
 
     const handleChangeRowsPerPage = (event: SelectChangeEvent) => {
       setRowsPerPage(+event.target.value);
-      setPage(0);
+      setPage(1);
+    };
+
+    const handleShowFilter = (event: React.MouseEvent<HTMLElement>) => {
+      setAnchorEl(event.currentTarget);
+    };
+
+    const handleCloseFilter = () => {
+      setAnchorEl(null);
     };
 
     return (
@@ -47,7 +57,11 @@ function UsersTable({ data, loading, error }: UsersTableProps): JSX.Element {
           <div role="table" aria-label="Users table">
             <div role="rowgroup">
               <div className="datatable-headers-container" role="row">
-                <DatatableHeader headerTitles={headerTitles} />;
+                <DatatableHeader
+                  headerTitles={headerTitles}
+                  handleShowFilter={handleShowFilter}
+                />
+                ;
               </div>
             </div>
             <>
@@ -59,8 +73,8 @@ function UsersTable({ data, loading, error }: UsersTableProps): JSX.Element {
                 <div role="rowgroup">
                   <DatatableRows
                     data={data.slice(
-                      page * rowsPerPage,
-                      page * rowsPerPage + rowsPerPage
+                      (page - 1) * rowsPerPage,
+                      page * rowsPerPage
                     )}
                   />
                 </div>
@@ -80,6 +94,10 @@ function UsersTable({ data, loading, error }: UsersTableProps): JSX.Element {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+        <DatatableFilterComponent
+          anchorEl={anchorEl}
+          handleCloseFilter={handleCloseFilter}
         />
       </>
     );

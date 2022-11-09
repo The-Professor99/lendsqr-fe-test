@@ -5,7 +5,16 @@ import { DatatableHeader } from "./DatatableHeader";
 
 describe("<DatatableHeader />", () => {
   test("it should mount", () => {
-    render(<DatatableHeader headerTitles={[]} />);
+    render(
+      <DatatableHeader
+        headerTitles={[]}
+        handleShowFilter={function (
+          event: React.MouseEvent<HTMLElement, MouseEvent>
+        ): void {
+          throw new Error("Function not implemented.");
+        }}
+      />
+    );
 
     const datatableHeader = screen.getByTestId("DatatableHeader");
 

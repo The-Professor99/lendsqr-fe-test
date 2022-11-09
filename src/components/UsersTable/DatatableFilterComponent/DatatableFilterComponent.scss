@@ -1,1 +1,12 @@
-.DatatableFilterComponent {}
+.FilterForm {
+  padding: 1.5rem;
+  .filter-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.8rem;
+  }
+  .action-buttons-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}

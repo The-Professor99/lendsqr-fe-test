@@ -6,30 +6,35 @@ import "./DatatableHeader.scss";
 
 interface DatatableHeaderProps {
   headerTitles: string[];
+  handleShowFilter: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 interface HeaderDataProps {
   headerTitle?: string;
+  handleShowFilter: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-function DatatableHeader({ headerTitles }: DatatableHeaderProps): JSX.Element {
-  const handleClick = () => {
-    console.log("Filtering...");
-  };
-  const HeaderData = ({ headerTitle }: HeaderDataProps): JSX.Element => {
-    return (
-      <>
-        <span>{headerTitle}</span>
-        {headerTitle && (
-          <div className="filter-icon-container" onClick={handleClick}>
-            <IconButton>
-              <img src={filterIcon} alt="filter icon" className="svgIcon" />
-            </IconButton>
-          </div>
-        )}
-      </>
-    );
-  };
+const HeaderData = ({
+  headerTitle,
+  handleShowFilter,
+}: HeaderDataProps): JSX.Element => {
+  return (
+    <>
+      <span>{headerTitle}</span>
+      {headerTitle && (
+        <div className="filter-icon-container">
+          <IconButton onClick={handleShowFilter}>
+            <img src={filterIcon} alt="filter icon" className="svgIcon" />
+          </IconButton>
+        </div>
+      )}
+    </>
+  );
+};
 
+function DatatableHeader({
+  headerTitles,
+  handleShowFilter,
+}: DatatableHeaderProps): JSX.Element {
   return (
     <>
       {headerTitles.map((title, index) => {
@@ -40,7 +45,10 @@ function DatatableHeader({ headerTitles }: DatatableHeaderProps): JSX.Element {
             data-testid="DatatableHeader"
             key={index}
           >
-            <HeaderData headerTitle={title} />
+            <HeaderData
+              headerTitle={title}
+              handleShowFilter={handleShowFilter}
+            />
           </div>
         );
       })}

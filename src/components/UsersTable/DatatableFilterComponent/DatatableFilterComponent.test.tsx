@@ -5,9 +5,18 @@ import { DatatableFilterComponent } from "./DatatableFilterComponent";
 
 describe("<DatatableFilterComponent />", () => {
   test("it should mount", () => {
-    render(<DatatableFilterComponent />);
+    render(
+      <DatatableFilterComponent
+        anchorEl={null}
+        handleCloseFilter={function (): void {
+          throw new Error("Function not implemented.");
+        }}
+      />
+    );
 
-    const datatableFilterComponent = screen.getByTestId("DatatableFilterComponent");
+    const datatableFilterComponent = screen.getByTestId(
+      "DatatableFilterComponent"
+    );
 
     expect(datatableFilterComponent).toBeInTheDocument();
   });

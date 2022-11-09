@@ -44,7 +44,7 @@ function DatatableFooter({
       </div>
 
       <Pagination
-        count={count}
+        count={Math.ceil(count / rowsPerPage)}
         shape="rounded"
         siblingCount={0}
         boundaryCount={2}
