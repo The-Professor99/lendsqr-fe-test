@@ -3,5 +3,16 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    span {
+      display: none;
+    }
+  }
+  @media all and (min-width: 768px) {
+    .account-menu-container {
+      span {
+        display: flex;
+        align-items: center;
+      }
+    }
   }
 }

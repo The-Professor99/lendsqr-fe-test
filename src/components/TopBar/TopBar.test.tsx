@@ -5,7 +5,13 @@ import { TopBar } from "./TopBar";
 
 describe("<TopBar />", () => {
   test("it should mount", () => {
-    render(<TopBar />);
+    render(
+      <TopBar
+        handleDrawerToggle={function (): void {
+          throw new Error("Function not implemented.");
+        }}
+      />
+    );
 
     const topBar = screen.getByTestId("TopBar");
 

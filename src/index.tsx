@@ -8,7 +8,6 @@ import {
   HomeLayout,
   AdminDashboard,
   UserDetails,
-  UsersPage,
   NotFound,
 } from "pages";
 import { RequireAuth, configureFakeBackend } from "_helpers";
@@ -39,7 +38,6 @@ root.render(
             }
           >
             <Route index element={<AdminDashboard />} />
-            <Route path={appRoutes.UsersPage.path} element={<UsersPage />} />
             <Route
               path={`${appRoutes.UserDetails.path}/:userId`}
               element={<UserDetails />}

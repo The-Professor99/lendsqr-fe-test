@@ -13,3 +13,16 @@
   flex-shrink: 0;
   font-size: 1.5rem;
 }
+
+.md-none {
+  display: none;
+}
+
+@media all and (min-width: 768px) {
+  .md-none {
+    display: block;
+  }
+  .lg-none {
+    display: none;
+  }
+}

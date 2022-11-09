@@ -1,7 +1,6 @@
 const appRoutes = {
   Dashboard: { path: "/" },
-  UsersPage: { path: "/users" },
-  UserDetails: { path: "/user" },
+  UserDetails: { path: "/users" },
   Login: { path: "/account/login" },
 };
 

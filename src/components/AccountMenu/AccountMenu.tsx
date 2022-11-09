@@ -13,10 +13,10 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { defaultUserAvatar } from "assets";
 import "./AccountMenu.scss";
 
-interface AccountMenuProps {}
+// interface AccountMenuProps {}
 
-function AccountMenu({}: AccountMenuProps): JSX.Element {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+function AccountMenu(): JSX.Element {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -41,7 +41,9 @@ function AccountMenu({}: AccountMenuProps): JSX.Element {
                 <img src={defaultUserAvatar} alt="user avatar" />
               </Avatar>
             </IconButton>
-            Adedeji <ArrowDropDownIcon />
+            <span>
+              Adedeji <ArrowDropDownIcon />
+            </span>
           </div>
         </Tooltip>
       </Box>

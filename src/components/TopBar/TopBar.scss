@@ -16,20 +16,28 @@
     align-items: center;
   }
   .logo-container {
-    width: 20%;
+    display: inline-block;
+    width: 40%;
   }
   .searchbar-container {
     width: 40%;
   }
   .topbar-right-container {
-    width: 35%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 300px;
     margin-left: auto;
-    a {
+    .docs-link {
       text-decoration: underline;
+    }
+  }
+  @media all and (min-width: 768px) {
+    .logo-container {
+      width: 20%;
+    }
+    .topbar-right-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 35%;
+      max-width: 300px;
     }
   }
 }

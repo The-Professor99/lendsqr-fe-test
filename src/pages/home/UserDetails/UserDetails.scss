@@ -10,8 +10,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
     button:first-child {
       margin-right: 0.8rem;
+    }
+  }
+  @media all and (min-width: 768px) {
+    .action-buttons-container {
+      flex-direction: row;
     }
   }
 }

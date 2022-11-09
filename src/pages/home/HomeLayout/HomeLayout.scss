@@ -5,10 +5,43 @@
     display: flex;
     .home-outlet-container {
       overflow: auto;
-      margin-left: $home-layout-sidebar-offset;
       margin-top: $home-layout-topbar-offset;
       padding: 0.8rem;
       padding-right: 1.2rem;
+    }
+  }
+  .drawer-md {
+    .MuiPaper-root {
+      left: initial;
+    }
+  }
+  @media all and (min-width: 768px) {
+    .home-layout-sub {
+      .home-outlet-container {
+        margin-left: $home-layout-sidebar-offset;
+      }
+    }
+  }
+}
+
+.drawer-sm {
+  .topbar-items {
+    padding: 15px 15px 15px 30px;
+    .docs-link {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      background: paleturquoise;
+      width: 100%;
+      margin-top: 0.2rem;
+      padding: 0.2rem 0;
+      text-decoration: underline;
+    }
+    .SearchBar {
+      padding: 0;
+      form {
+        width: 100%;
+        margin: 0;
+      }
     }
   }
 }

@@ -8,13 +8,13 @@ import {
   ListItemText,
   Popover,
 } from "@mui/material";
-import {
-  MoreVert,
-  PersonAdd,
-  Visibility,
-  DeleteOutline,
-} from "@mui/icons-material";
+import { MoreVert } from "@mui/icons-material";
 
+import {
+  viewIcon,
+  userDeleteIconOutlined,
+  userConfirmIconOutlined,
+} from "assets";
 import "./OptionsPopover.scss";
 import appRoutes from "routes";
 
@@ -66,20 +66,28 @@ function OptionsPopover({ userId }: OptionsPopoverProps): JSX.Element {
             <Link to={`${appRoutes.UserDetails.path}/${userId}`}>
               <ListItemButton>
                 <ListItemIcon>
-                  <Visibility />
+                  <img src={viewIcon} alt="view icon" className="svgIcon" />
                 </ListItemIcon>
                 <ListItemText primary="View Details" />
               </ListItemButton>
             </Link>
             <ListItemButton>
               <ListItemIcon>
-                <DeleteOutline />
+                <img
+                  src={userDeleteIconOutlined}
+                  alt="view icon"
+                  className="svgIcon"
+                />
               </ListItemIcon>
               <ListItemText primary="Blacklist User" />
             </ListItemButton>
             <ListItemButton>
               <ListItemIcon>
-                <PersonAdd />
+                <img
+                  src={userConfirmIconOutlined}
+                  alt="view icon"
+                  className="svgIcon"
+                />
               </ListItemIcon>
               <ListItemText primary="Activate User" />
             </ListItemButton>
