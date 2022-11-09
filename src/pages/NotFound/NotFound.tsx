@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+
 import "./NotFound.scss";
 
 function NotFound() {
@@ -8,7 +11,12 @@ function NotFound() {
 
   return (
     <div className="NotFound" data-testid="NotFound">
-      NotFound Component
+      <b>Oops!</b>
+      <p>404: Page Not Found</p>
+
+      <Link to={{ pathname: "/" }}>
+        <Button>Visit Homepage</Button>
+      </Link>
     </div>
   );
 }
