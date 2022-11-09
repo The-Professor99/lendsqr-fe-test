@@ -1,5 +1,8 @@
+@import "styles/_mixins";
 .UserDetailsTabs {
   .MuiTabs-flexContainer {
-    justify-content: space-between;
+    @include grid-container;
+    column-gap: initial;
+    grid-template-columns: auto auto auto auto auto auto;
   }
 }

@@ -1,1 +1,15 @@
-.UsersTable {}
+@import "styles/_mixins";
+.UsersTable {
+}
+
+.CustomDataTable {
+  min-width: fit-content;
+  margin-bottom: 2rem;
+  table {
+    overflow: auto;
+  }
+  .datatable-headers-container {
+    @include grid-container($flow: column);
+    column-gap: initial;
+  }
+}

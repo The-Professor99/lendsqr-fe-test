@@ -1,0 +1,10 @@
+@import "styles/_mixins";
+
+.DatatableRow {
+  @include table-data;
+}
+
+.DatatableRows {
+  @include grid-container($flow: column);
+  column-gap: initial;
+}

@@ -6,7 +6,9 @@ import { UserProfile } from "_models";
 
 describe("<UsersTable />", () => {
   test("it should mount", () => {
-    render(<UsersTable data={[] as UserProfile[]} loading={false} />);
+    render(
+      <UsersTable data={[] as UserProfile[]} loading={false} error={false} />
+    );
 
     const usersTable = screen.getByTestId("UsersTable");
 
