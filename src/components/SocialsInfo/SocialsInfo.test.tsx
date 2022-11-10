@@ -4,9 +4,10 @@ import "@testing-library/jest-dom/extend-expect";
 import { SocialsInfo } from "./SocialsInfo";
 import { Socials } from "_models";
 
+import { renderWithProvider } from "_helpers";
 describe("<SocialsInfo />", () => {
   test("it should mount", () => {
-    render(<SocialsInfo socialsDetails={{} as Socials} />);
+    renderWithProvider(<SocialsInfo socialsDetails={{} as Socials} />);
 
     const socialsInfo = screen.getByTestId("SocialsInfo");
 

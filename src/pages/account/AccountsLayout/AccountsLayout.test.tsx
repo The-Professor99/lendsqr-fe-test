@@ -3,9 +3,10 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { AccountsLayout } from "./AccountsLayout";
 
+import { renderWithProvider } from "_helpers";
 describe("<AccountsLayout />", () => {
   test("it should mount", () => {
-    render(<AccountsLayout />);
+    renderWithProvider(<AccountsLayout />);
 
     const accountsLayout = screen.getByTestId("AccountsLayout");
 

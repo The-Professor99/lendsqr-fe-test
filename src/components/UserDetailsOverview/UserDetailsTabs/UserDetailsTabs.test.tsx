@@ -3,11 +3,12 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { UserDetailsTabs } from "./UserDetailsTabs";
 
+import { renderWithProvider } from "_helpers";
 describe("<UserDetailsTabs />", () => {
   test("it should mount", () => {
-    render(
+    renderWithProvider(
       <UserDetailsTabs
-        tabValue={""}
+        tabValue={"generalDetails"}
         handleChange={function (
           event: React.SyntheticEvent<Element, Event>,
           newValue: string

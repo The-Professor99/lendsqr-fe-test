@@ -39,12 +39,7 @@ function DatatableHeader({
     <>
       {headerTitles.map((title, index) => {
         return (
-          <div
-            role="columnheader"
-            className="DatatableHeader"
-            data-testid="DatatableHeader"
-            key={index}
-          >
+          <div role="columnheader" className="DatatableHeader" key={index}>
             <HeaderData
               headerTitle={title}
               handleShowFilter={handleShowFilter}

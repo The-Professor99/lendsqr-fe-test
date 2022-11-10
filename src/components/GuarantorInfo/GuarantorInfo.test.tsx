@@ -4,9 +4,10 @@ import "@testing-library/jest-dom/extend-expect";
 import { GuarantorInfo } from "./GuarantorInfo";
 import { Guarantor } from "_models";
 
+import { renderWithProvider } from "_helpers";
 describe("<GuarantorInfo />", () => {
   test("it should mount", () => {
-    render(<GuarantorInfo guarantorDetails={{} as Guarantor} />);
+    renderWithProvider(<GuarantorInfo guarantorDetails={{} as Guarantor} />);
 
     const guarantorInfo = screen.getByTestId("GuarantorInfo");
 

@@ -57,7 +57,7 @@ function UserDetailsOverview({
                   </Avatar>
                 </div>
                 <div className="name-container">
-                  <p>
+                  <p className="profile-name">
                     {data.profile?.firstName + " " + data.profile?.lastName}
                   </p>
                   <p>{data.accountNumber} </p>

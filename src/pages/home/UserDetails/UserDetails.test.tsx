@@ -3,9 +3,10 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { UserDetails } from "./UserDetails";
 
+import { renderWithProvider } from "_helpers";
 describe("<UserDetails />", () => {
   test("it should mount", () => {
-    render(<UserDetails />);
+    renderWithProvider(<UserDetails />);
 
     const userDetails = screen.getByTestId("UserDetails");
 

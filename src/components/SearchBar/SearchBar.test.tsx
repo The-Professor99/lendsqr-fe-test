@@ -3,9 +3,10 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { SearchBar } from "./SearchBar";
 
+import { renderWithProvider } from "_helpers";
 describe("<SearchBar />", () => {
   test("it should mount", () => {
-    render(<SearchBar />);
+    renderWithProvider(<SearchBar />);
 
     const searchBar = screen.getByTestId("SearchBar");
 

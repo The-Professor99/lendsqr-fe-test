@@ -84,6 +84,7 @@ function Login() {
             error={formik.touched.email && Boolean(formik.errors.email)}
             helperText={formik.touched.email && formik.errors.email}
             className="w-100-all"
+            data-testid="email"
           />
           <TextField
             name="password"
@@ -108,6 +109,7 @@ function Login() {
             }}
             label="Password"
             className="w-100-all"
+            data-testid="password"
           />
           <div className="forgot-password">
             <a href="#!">FORGOT PASSWORD?</a>
@@ -118,6 +120,7 @@ function Login() {
               disabled={formik.isSubmitting}
               type="submit"
               className="w-100-all"
+              data-testid="submit"
             >
               {formik.isSubmitting && (
                 <span className="spinner-loader">

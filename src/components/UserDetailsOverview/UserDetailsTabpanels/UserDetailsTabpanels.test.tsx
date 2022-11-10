@@ -4,9 +4,10 @@ import "@testing-library/jest-dom/extend-expect";
 import { UserDetailsTabpanels } from "./UserDetailsTabpanels";
 import { UserProfile } from "_models";
 
+import { renderWithProvider } from "_helpers";
 describe("<UserDetailsTabpanels />", () => {
   test("it should mount", () => {
-    render(
+    renderWithProvider(
       <UserDetailsTabpanels
         tabValue={""}
         data={{} as UserProfile}

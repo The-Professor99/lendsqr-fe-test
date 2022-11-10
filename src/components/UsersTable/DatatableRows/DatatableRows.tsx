@@ -28,15 +28,11 @@ function DatatableRows({ data }: DatatableRowsProps): JSX.Element {
     );
   };
   return (
-    <>
+    <div data-testid="DatatableRows">
       {data.map((user) => {
         return (
           <div key={user.id}>
-            <div
-              className="DatatableRows"
-              data-testid="DatatableRows"
-              role="row"
-            >
+            <div className="DatatableRows" role="row">
               <DatatableRow>
                 <span title={user.orgName}>{user.orgName}</span>
               </DatatableRow>
@@ -87,7 +83,7 @@ function DatatableRows({ data }: DatatableRowsProps): JSX.Element {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }
 

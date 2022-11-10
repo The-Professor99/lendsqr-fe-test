@@ -3,9 +3,10 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { Sidebar } from "./Sidebar";
 
+import { renderWithProvider } from "_helpers";
 describe("<Sidebar />", () => {
   test("it should mount", () => {
-    render(<Sidebar />);
+    renderWithProvider(<Sidebar />);
 
     const sidebar = screen.getByTestId("Sidebar");
 

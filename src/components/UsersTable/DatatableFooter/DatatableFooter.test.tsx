@@ -4,9 +4,10 @@ import "@testing-library/jest-dom/extend-expect";
 import { DatatableFooter } from "./DatatableFooter";
 import { SelectChangeEvent } from "@mui/material";
 
+import { renderWithProvider } from "_helpers";
 describe("<DatatableFooter />", () => {
   test("it should mount", () => {
-    render(
+    renderWithProvider(
       <DatatableFooter
         rowsPerPageOptions={[]}
         count={0}

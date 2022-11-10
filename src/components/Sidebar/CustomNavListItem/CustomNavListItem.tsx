@@ -25,11 +25,7 @@ function CustomNavListItem({
   return (
     <div className="CustomNavListItem" data-testid="CustomNavListItem">
       {clickAction ? ( // if a clickAction is defined, it takes precedence over linkUrl
-        <ListItem
-          className="CustomNavListItem"
-          data-testid="CustomNavListItem"
-          onClick={clickAction}
-        >
+        <ListItem className="CustomNavListItem" onClick={clickAction}>
           <ListItemButton>
             <ListItemIcon>{children}</ListItemIcon>
             <ListItemText primary={displayText} className="desktop-only" />
@@ -37,10 +33,7 @@ function CustomNavListItem({
         </ListItem>
       ) : (
         <NavLink to={linkUrl}>
-          <ListItem
-            className="CustomNavListItem"
-            data-testid="CustomNavListItem"
-          >
+          <ListItem className="CustomNavListItem">
             <ListItemButton>
               <ListItemIcon>{children}</ListItemIcon>
               <ListItemText primary={displayText} className="desktop-only" />

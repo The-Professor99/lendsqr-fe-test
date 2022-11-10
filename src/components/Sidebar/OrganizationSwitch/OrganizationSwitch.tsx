@@ -25,7 +25,7 @@ function OrganizationSwitch({}: OrganizationSwitchProps): JSX.Element {
   };
   return (
     <>
-      <ListItemButton onClick={handleClick} sx={{ pl: 4 }}>
+      <ListItemButton onClick={handleClick} sx={{ pl: 4 }} className="OrganizationSwitch">
         <ListItemIcon>
           <img src={briefCaseIcon} alt="briefcase Icon" className="svgIcon" />
         </ListItemIcon>

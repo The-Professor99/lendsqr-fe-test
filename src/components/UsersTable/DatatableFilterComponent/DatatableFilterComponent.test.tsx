@@ -4,9 +4,11 @@ import "@testing-library/jest-dom/extend-expect";
 import { DatatableFilterComponent } from "./DatatableFilterComponent";
 import { FilterValuesProps } from "_models";
 
+import { renderWithProvider } from "_helpers";
+
 describe("<DatatableFilterComponent />", () => {
   test("it should mount", () => {
-    render(
+    renderWithProvider(
       <DatatableFilterComponent
         anchorEl={null}
         handleCloseFilter={function (): void {

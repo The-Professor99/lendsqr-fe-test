@@ -3,9 +3,10 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { CustomNavListItem } from "./CustomNavListItem";
 
+import { renderWithProvider } from "_helpers";
 describe("<CustomNavListItem />", () => {
   test("it should mount", () => {
-    render(
+    renderWithProvider(
       <CustomNavListItem children={<div></div>} displayText={""} linkUrl={""} />
     );
 
