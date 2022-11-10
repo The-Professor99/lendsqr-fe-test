@@ -73,7 +73,7 @@ function UsersTable({ data, loading, error }: UsersTableProps): JSX.Element {
 
     return (
       <>
-        <Paper className="CustomDataTable">
+        <Paper className="CustomDataTable" elevation={4}>
           <div role="table" aria-label="Users table">
             <div role="rowgroup">
               <div className="datatable-headers-container" role="row">

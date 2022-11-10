@@ -20,7 +20,6 @@ function UserDetails() {
 
   const { data, loading, error } = useRemoteService(dataUrl, {} as UserProfile);
 
-  console.log(data);
   return (
     <section className="UserDetails" data-testid="UserDetails">
       <Button
