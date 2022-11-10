@@ -1,4 +1,16 @@
+@import "styles/styles";
+
 .CustomNavListItem {
+  position: relative;
+  .placeholder-active .active-display {
+    // placeholder-active to be replaced with `active` when all sidebar links are routed to existing pages
+    width: $sidebar-width;
+    height: 2.5rem;
+    position: absolute;
+    left: -$sidebar-padding-left;
+    background-color: rgba(57, 205, 204, 0.06);
+    border-left: 3px solid var(--light-cyan);
+  }
   // .desktop-only {
   //   display: none;
   // }

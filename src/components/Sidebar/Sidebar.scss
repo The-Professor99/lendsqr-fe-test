@@ -2,7 +2,7 @@
 .Sidebar {
   .MuiPaper-root {
     overflow-y: auto;
-    padding-left: 30px;
+    padding-left: $sidebar-padding-left;
     box-shadow: 13px 2px 5px -3px rgb(0 0 0 / 12%);
     border-radius: 0;
   }

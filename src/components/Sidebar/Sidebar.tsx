@@ -18,7 +18,11 @@ function Sidebar({}: SidebarProps): JSX.Element {
       <Box>
         <Paper>
           <OrganizationSwitch />
-          <CustomNavListItem displayText={"Dashboard"} linkUrl={"/"}>
+          <CustomNavListItem
+            displayText={"Dashboard"}
+            linkUrl={"/"}
+            className="placeholder-active"
+          >
             <img src={homeIcon} alt="home Icon" className="svgIcon" />
           </CustomNavListItem>
           <CustomersNav />

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { Button } from "@mui/material";
 
 import { UserDetailsOverview } from "components";
@@ -22,12 +22,11 @@ function UserDetails() {
 
   return (
     <section className="UserDetails" data-testid="UserDetails">
-      <Button
-        onClick={() => navigate({ pathname: "/" })}
-        className="prevButton"
-      >
-        <img src={backIcon} alt="go back icon" /> <span>Back to Users</span>
-      </Button>
+      <Link to="/">
+        <Button className="prevButton">
+          <img src={backIcon} alt="go back icon" /> <span>Back to Users</span>
+        </Button>
+      </Link>
       <div className="action-buttons-container">
         <h2>User Details</h2>
         <div>
