@@ -1,7 +1,11 @@
 import React from "react";
 import { Popover, Select, MenuItem, TextField, Button } from "@mui/material";
+import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
+import { mainAppActions } from "_redux";
+import { FilterValuesProps } from "_models";
 import "./DatatableFilterComponent.scss";
 
 interface DatatableFilterComponentProps {
@@ -15,52 +19,109 @@ function DatatableFilterComponent({
 }: DatatableFilterComponentProps): JSX.Element {
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
+  const dispatch = useDispatch();
+
+  const formik = useFormik({
+    initialValues: {
+      orgName: "",
+      userName: "",
+      email: "",
+      createdAt: "",
+      phoneNumber: "",
+      status: "",
+    },
+    onSubmit: (values) => {
+      dispatch(mainAppActions.setFilterValues(values));
+    },
+  });
+
+  const handleReset = () => {
+    formik.resetForm();
+    formik.handleSubmit();
+  };
 
   const FilterForm = () => {
     return (
       <div className="FilterForm">
-        <div className="filter-field">
-          <label>Organization</label>
-          <Select
-            id="organization"
-            IconComponent={KeyboardArrowDownIcon}
-            placeholder="Select"
-          >
-            <MenuItem value="Organization">Organization</MenuItem>
-          </Select>
-        </div>
-        <div className="filter-field">
-          <label>Username</label>
-          <TextField id="username" name="username" placeholder="User" />
-        </div>
-        <div className="filter-field">
-          <label>Email</label>
-          <TextField id="email" name="email" placeholder="Email" />
-        </div>
-        <div className="filter-field">
-          <label>Date</label>
-          <TextField
-            id="date"
-            type="date"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-        </div>
-        <div className="filter-field">
-          <label>Status</label>
-          <Select
-            id="status"
-            IconComponent={KeyboardArrowDownIcon}
-            placeholder="Select"
-          >
-            <MenuItem value="Status">Status</MenuItem>
-          </Select>
-        </div>
-        <div className="action-buttons-container">
-          <Button variant="outlined">Reset</Button>
-          <Button variant="outlined">Filter</Button>
-        </div>
+        <form onSubmit={formik.handleSubmit}>
+          <div className="filter-field">
+            <label>Organization</label>
+            <Select
+              id="organization"
+              name="orgName"
+              value={formik.values.orgName}
+              onChange={formik.handleChange}
+              IconComponent={KeyboardArrowDownIcon}
+              placeholder="Select"
+            >
+              <MenuItem value="Organization">Organization</MenuItem>
+            </Select>
+          </div>
+          <div className="filter-field">
+            <label>Username</label>
+            <TextField
+              id="username"
+              name="userName"
+              placeholder="User"
+              value={formik.values.userName}
+              onChange={formik.handleChange}
+            />
+          </div>
+          <div className="filter-field">
+            <label>Email</label>
+            <TextField
+              id="email"
+              name="email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              placeholder="Email"
+            />
+          </div>
+          <div className="filter-field">
+            <label>Date</label>
+            <TextField
+              id="date"
+              type="date"
+              name="createdAt"
+              value={formik.values.createdAt}
+              onChange={formik.handleChange}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </div>
+          <div className="filter-field">
+            <label>Phone Number</label>
+            <TextField
+              id="phoneNumber"
+              name="phoneNumber"
+              placeholder="Phone Number"
+              value={formik.values.phoneNumber}
+              onChange={formik.handleChange}
+            />
+          </div>
+          <div className="filter-field">
+            <label>Status</label>
+            <Select
+              id="status"
+              name="status"
+              value={formik.values.status}
+              onChange={formik.handleChange}
+              IconComponent={KeyboardArrowDownIcon}
+              placeholder="Select"
+            >
+              <MenuItem value="Status">Pending</MenuItem>
+            </Select>
+          </div>
+          <div className="action-buttons-container">
+            <Button variant="outlined" type="button" onClick={handleReset}>
+              Reset
+            </Button>
+            <Button variant="outlined" type="submit">
+              Filter
+            </Button>
+          </div>
+        </form>
       </div>
     );
   };
@@ -80,6 +141,7 @@ function DatatableFilterComponent({
           horizontal: "left",
         }}
         className="filter-component-popover"
+        disableScrollLock={true}
       >
         <FilterForm />
       </Popover>

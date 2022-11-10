@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Paper, CircularProgress, SelectChangeEvent } from "@mui/material";
+import { useSelector } from "react-redux";
 
 import { UserProfile } from "_models";
 import { DatatableHeader } from "./DatatableHeader";
@@ -7,6 +8,7 @@ import { DatatableRows } from "./DatatableRows";
 import { DatatableFooter } from "./DatatableFooter";
 import { DatatableFilterComponent } from "./DatatableFilterComponent";
 import "./UsersTable.scss";
+import { mainAppSelector } from "_redux";
 
 interface UsersTableProps {
   data: UserProfile[];
@@ -33,6 +35,7 @@ function UsersTable({ data, loading, error }: UsersTableProps): JSX.Element {
     const [page, setPage] = useState(1);
     const [rowsPerPage, setRowsPerPage] = useState(10);
     const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
+    const { filterValues } = useSelector(mainAppSelector);
 
     const handleChangePage = (event: unknown, newPage: number) => {
       setPage(newPage);
@@ -50,6 +53,18 @@ function UsersTable({ data, loading, error }: UsersTableProps): JSX.Element {
     const handleCloseFilter = () => {
       setAnchorEl(null);
     };
+
+    const filteredItems = data.filter((item) => {
+      return (
+        item.userName
+          .toLowerCase()
+          .includes(filterValues.userName.toLowerCase()) &&
+        item.email.toLowerCase().includes(filterValues.email.toLowerCase()) &&
+        item.phoneNumber
+          .toLowerCase()
+          .includes(filterValues.phoneNumber.toLowerCase())
+      );
+    });
 
     return (
       <>
@@ -72,7 +87,7 @@ function UsersTable({ data, loading, error }: UsersTableProps): JSX.Element {
               ) : (
                 <div role="rowgroup">
                   <DatatableRows
-                    data={data.slice(
+                    data={filteredItems.slice(
                       (page - 1) * rowsPerPage,
                       page * rowsPerPage
                     )}
@@ -89,7 +104,7 @@ function UsersTable({ data, loading, error }: UsersTableProps): JSX.Element {
         </Paper>
         <DatatableFooter
           rowsPerPageOptions={[10, 40, 100]}
-          count={data.length}
+          count={filteredItems.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

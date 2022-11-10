@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
 
 import {
   AccountsLayout,
@@ -16,6 +17,7 @@ import "./index.scss";
 import App from "./App";
 import appRoutes from "./routes";
 import reportWebVitals from "./reportWebVitals";
+import { store } from "./_redux";
 
 // setup fake backend. Only need to simulate login
 // comment out when the simulated fake login functionality
@@ -27,29 +29,31 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path={appRoutes.Dashboard.path} element={<App />}>
-          <Route
-            element={
-              <RequireAuth>
-                <HomeLayout />
-              </RequireAuth>
-            }
-          >
-            <Route index element={<AdminDashboard />} />
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path={appRoutes.Dashboard.path} element={<App />}>
             <Route
-              path={`${appRoutes.UserDetails.path}/:userId`}
-              element={<UserDetails />}
-            />
+              element={
+                <RequireAuth>
+                  <HomeLayout />
+                </RequireAuth>
+              }
+            >
+              <Route index element={<AdminDashboard />} />
+              <Route
+                path={`${appRoutes.UserDetails.path}/:userId`}
+                element={<UserDetails />}
+              />
+            </Route>
+            <Route element={<AccountsLayout />}>
+              <Route path={appRoutes.Login.path} element={<Login />} />
+            </Route>
           </Route>
-          <Route element={<AccountsLayout />}>
-            <Route path={appRoutes.Login.path} element={<Login />} />
-          </Route>
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

@@ -49,7 +49,33 @@ function DatatableRows({ data }: DatatableRowsProps): JSX.Element {
                 <span title={user.phoneNumber}>{user.phoneNumber}</span>
               </DatatableRow>
               <DatatableRow>
-                <span title={user.createdAt}>{user.createdAt}</span>
+                <span
+                  title={
+                    new Date(user.createdAt).toLocaleString("en-GB", {
+                      weekday: "long",
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    }) +
+                    " " +
+                    new Date(user.createdAt).toLocaleTimeString("en-GB", {
+                      hour12: true,
+                      timeStyle: "short",
+                    })
+                  }
+                >
+                  {new Date(user.createdAt).toLocaleString("en-GB", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  }) +
+                    " " +
+                    new Date(user.createdAt).toLocaleTimeString("en-GB", {
+                      hour12: true,
+                      timeStyle: "short",
+                    })}
+                </span>
               </DatatableRow>
               <DatatableRow>
                 <span>{randomChoice(statusArray)}</span>
