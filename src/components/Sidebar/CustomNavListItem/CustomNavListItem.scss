@@ -2,7 +2,7 @@
 
 .CustomNavListItem {
   position: relative;
-  .placeholder-active .active-display {
+  .placeholder-active.active .active-display {
     // placeholder-active to be replaced with `active` when all sidebar links are routed to existing pages
     width: $sidebar-width;
     height: 2.5rem;
