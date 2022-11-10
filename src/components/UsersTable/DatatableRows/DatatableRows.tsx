@@ -13,9 +13,10 @@ interface DatatableRowProps {
 }
 
 function DatatableRows({ data }: DatatableRowsProps): JSX.Element {
-  const statusArray = ["Inactive", "Pending", "Backlisted"];
+  const statusArray = ["Inactive", "Pending", "Backlisted", "Active"];
   const randomChoice = (arr: string[]) => {
-    return arr[Math.floor(arr.length * Math.random())];
+    const status = arr[Math.floor(arr.length * Math.random())];
+    return <span className={`status ${status}`}>{status}</span>;
   }; // placeholder for 'status' which
   // should come with user data but isn't
 
@@ -77,9 +78,7 @@ function DatatableRows({ data }: DatatableRowsProps): JSX.Element {
                     })}
                 </span>
               </DatatableRow>
-              <DatatableRow>
-                <span>{randomChoice(statusArray)}</span>
-              </DatatableRow>
+              <DatatableRow>{randomChoice(statusArray)}</DatatableRow>
               <DatatableRow>
                 <OptionsPopover userId={user.id} />
               </DatatableRow>

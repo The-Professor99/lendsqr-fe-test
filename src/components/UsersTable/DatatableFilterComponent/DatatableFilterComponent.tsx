@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import { mainAppActions } from "_redux";
-import { FilterValuesProps } from "_models";
 import "./DatatableFilterComponent.scss";
 
 interface DatatableFilterComponentProps {
@@ -117,7 +116,7 @@ function DatatableFilterComponent({
             <Button variant="outlined" type="button" onClick={handleReset}>
               Reset
             </Button>
-            <Button variant="outlined" type="submit">
+            <Button variant="contained" type="submit">
               Filter
             </Button>
           </div>

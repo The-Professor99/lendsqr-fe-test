@@ -4,5 +4,15 @@
     @include grid-container;
     column-gap: initial;
     grid-template-columns: auto auto auto auto auto auto;
+
+    .Mui-selected {
+      color: var(--light-cyan);
+    }
+    .MuiButtonBase-root:not(.Mui-selected) {
+      font-family: "SF Compact Text", "Work Sans", sans-serif;
+    }
+  }
+  .MuiTabs-indicator {
+    background-color: var(--light-cyan);
   }
 }

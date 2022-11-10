@@ -61,6 +61,7 @@ function OptionsPopover({ userId }: OptionsPopoverProps): JSX.Element {
             vertical: "top",
             horizontal: "right",
           }}
+          className="popover-options"
         >
           <List>
             <Link to={`${appRoutes.UserDetails.path}/${userId}`}>

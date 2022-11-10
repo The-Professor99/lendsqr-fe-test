@@ -2,4 +2,7 @@
 
 .DatatableHeader {
   @include table-data;
+  justify-content: initial;
+  color: var(--dark-blue-variant);
+  font-weight: 600;
 }

@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import { Paper, InputBase, Divider, IconButton } from "@mui/material";
 import { Menu, Search, Directions } from "@mui/icons-material";
+import { useDispatch } from "react-redux";
 
+import { mainAppActions } from "_redux";
 import "./SearchBar.scss";
 
 interface SearchBarProps {}
 
 function SearchBar({}: SearchBarProps): JSX.Element {
   const [searchValue, setSearchValue] = useState("");
+  const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   };
 
   const handleClick = () => {
+    // search function will go here
     if (searchValue) {
-      // search execution will go here
-      console.group();
-      console.log("Search Results for: ", searchValue);
-      console.log("No result found!");
-      console.groupEnd();
+      dispatch(mainAppActions.setSearchTerm(searchValue));
     }
   };
 
@@ -33,7 +33,7 @@ function SearchBar({}: SearchBarProps): JSX.Element {
           onChange={handleChange}
         />
         <IconButton
-          type="submit"
+          type="button"
           sx={{ p: "10px" }}
           aria-label="search"
           onClick={handleClick}

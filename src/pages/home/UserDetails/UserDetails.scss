@@ -5,6 +5,7 @@
     img {
       margin-right: 0.8rem;
     }
+    color: var(--dark-blue-variant);
   }
   .action-buttons-container {
     display: flex;
@@ -13,6 +14,13 @@
     flex-direction: column;
     button:first-child {
       margin-right: 0.8rem;
+      color: var(--danger-color);
+      border-color: var(--danger-color);
+    }
+
+    button:last-child {
+      color: var(--success-color);
+      border-color: var(--success-color);
     }
   }
   @media all and (min-width: 768px) {

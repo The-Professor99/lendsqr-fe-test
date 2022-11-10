@@ -63,7 +63,7 @@ function SettingsNav({}: SettingsNavProps): JSX.Element {
       </div>
 
       <Backdrop sx={{ color: "#fff", zIndex: "1301" }} open={backdrop}>
-        <CircularProgress color="inherit" />
+        <CircularProgress color="inherit" className="spinner-loader" />
         Loging Out...
       </Backdrop>
     </>

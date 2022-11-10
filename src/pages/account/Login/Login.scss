@@ -7,10 +7,16 @@
     h2 {
       margin-top: 0;
       margin-bottom: 0.625rem;
+      font-family: "Avenir Next Bold", "Work Sans", sans-serif;
+      font-size: 3rem;
+      color: var(--dark-blue);
     }
     p {
       margin-top: 0;
       margin-bottom: 3.75rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--light-cyan);
     }
   }
   .MuiBox-root {
@@ -19,7 +25,14 @@
       margin-bottom: 1.5rem;
     }
   }
+  .MuiButton-root {
+    background-color: var(--light-cyan);
+  }
   .forgot-password {
     margin-bottom: 1.8rem;
+  }
+  .spinner-loader {
+    display: inline-block;
+    margin-right: 1rem;
   }
 }

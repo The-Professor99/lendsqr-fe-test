@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "SF Compact Text";
+  src: local("SF Compact Text"),
+    url(./assets/fonts/FontsFree-Net-SFCompactText-Regular.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: local("Avenir Next"),
+    url(./assets/fonts/AvenirNextLTPro-Bold.otf) format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: local("Avenir Next"),
+    url(./assets/fonts/AvenirNextLTPro-Regular.otf) format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next Light";
+  src: local("Avenir Next"),
+    url(./assets/fonts/AvenirNextLTPro-It.otf) format("truetype");
+  font-weight: lighter;
+}
+
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -11,9 +39,13 @@ html {
 html,
 body {
   height: 100%;
-  font-family: "Roboto", "Kumbh Sans", sans-serif;
+  font-family: "Work Sans", sans-serif;
   max-width: 1440px;
   margin: auto;
+}
+
+body * {
+  color: #213f7d;
 }
 img {
   max-width: 100%;
@@ -23,7 +55,6 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
-
 .page-loader {
   position: fixed;
   top: 50%;
@@ -37,4 +68,13 @@ a {
   height: 120px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
+}
+
+:root {
+  --dark-blue: #213f7d;
+  --light-cyan: #39cdcc;
+  --dark-blue-variant: #545f7d;
+  --warn-color: #e9b200;
+  --danger-color: #e4033b;
+  --success-color: #39cd62;
 }

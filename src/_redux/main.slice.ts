@@ -22,6 +22,7 @@ function createInitialState() {
       phoneNumber: "",
       status: "",
     },
+    searchTerm: "",
   };
 }
 
@@ -29,21 +30,30 @@ function createInitialState() {
 function createReducers() {
   return {
     setFilterValues,
+    setSearchTerm,
   };
 
   // reducer actions
   function setFilterValues(
-    state: { filterValues: FilterValuesProps },
+    state: { filterValues: FilterValuesProps; searchTerm: string },
     action: { payload: FilterValuesProps }
   ) {
     state.filterValues = action.payload;
+  }
+
+  function setSearchTerm(
+    state: { filterValues: FilterValuesProps; searchTerm: string },
+    action: { payload: string }
+  ) {
+    state.searchTerm = action.payload;
   }
 }
 
 // state selector
 export const mainAppSelector = createSelector(
-  [(state) => state.mainApp.filterValues],
-  (filterValues) => ({
+  [(state) => state.mainApp.filterValues, (state) => state.mainApp.searchTerm],
+  (filterValues, searchTerm) => ({
     filterValues,
+    searchTerm,
   })
 );

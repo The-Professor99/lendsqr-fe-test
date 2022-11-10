@@ -10,12 +10,29 @@
   .MuiListItem-root {
     padding-left: 0;
   }
+  span.MuiTypography-root,
+  .MuiListItemIcon-root {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    color: var(--dark-blue);
+  }
+  .MuiListItemIcon-root {
+    min-width: 36px;
+  }
+  .section-title {
+    margin-bottom: 0;
+    font-weight: 500;
+  }
+  .MuiList-root {
+    padding-top: 0;
+  }
   @media all and (min-width: 768px) {
     .MuiPaper-root {
       width: $sidebar-width;
       height: $sidebar-height;
       position: fixed;
       bottom: 0;
+      padding-top: 2.5rem;
     }
   }
 }

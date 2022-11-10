@@ -35,7 +35,7 @@ function UsersTable({ data, loading, error }: UsersTableProps): JSX.Element {
     const [page, setPage] = useState(1);
     const [rowsPerPage, setRowsPerPage] = useState(10);
     const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
-    const { filterValues } = useSelector(mainAppSelector);
+    const { filterValues, searchTerm } = useSelector(mainAppSelector);
 
     const handleChangePage = (event: unknown, newPage: number) => {
       setPage(newPage);
@@ -62,7 +62,12 @@ function UsersTable({ data, loading, error }: UsersTableProps): JSX.Element {
         item.email.toLowerCase().includes(filterValues.email.toLowerCase()) &&
         item.phoneNumber
           .toLowerCase()
-          .includes(filterValues.phoneNumber.toLowerCase())
+          .includes(filterValues.phoneNumber.toLowerCase()) &&
+        (item.userName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.phoneNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.createdAt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.orgName.toLowerCase().includes(searchTerm.toLowerCase()))
       );
     });
 

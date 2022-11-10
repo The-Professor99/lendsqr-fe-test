@@ -1,5 +1,6 @@
 .FilterForm {
-  padding: 1.5rem;
+  padding: 1.2rem;
+  width: 17rem;
   .filter-field {
     display: flex;
     flex-direction: column;
@@ -8,5 +9,8 @@
   .action-buttons-container {
     display: flex;
     justify-content: space-between;
+    button:last-child {
+      background-color: var(--light-cyan);
+    }
   }
 }

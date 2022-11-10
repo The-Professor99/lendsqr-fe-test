@@ -114,14 +114,13 @@ function Login() {
           </div>
           <div>
             <Button
-              color="primary"
               variant="contained"
               disabled={formik.isSubmitting}
               type="submit"
               className="w-100-all"
             >
               {formik.isSubmitting && (
-                <span className="me-1">
+                <span className="spinner-loader">
                   <CircularProgress />
                 </span>
               )}
