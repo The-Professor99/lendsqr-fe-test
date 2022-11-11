@@ -60,6 +60,7 @@ To run tests, run the following command
 - Login and Logout make use of localstorage.
 - The datatable, filters and search box make use of redux for statemanagement.
 - A simple `notfound` page is also set up.
+- On the user details page, when you hover over the placeholder avatar, the user's uploaded avatar is then shown.
 
 ## Authors
 
